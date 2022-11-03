@@ -1,0 +1,423 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+
+   <meta name="Description" content="In the definition of the class Rectangle, the variable length and width is declared with the keyword private and the methods area and perimeter are declared with the keyword public.When a member of a class is declared private. It can be used only by the methods of that class. The public access modifier permits a member to be accessed by code outside the class." />
+   <meta name="Keywords" content="rectangle, class, public, double" />
+   
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+
+  <title>
+  Designing a Simple Class in Java
+</title>
+
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/java/classes-i/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<link rel="stylesheet" href="../../css/menustyle.css" tppabs="http://beginwithjava.com/css/menustyle.css">
+   <script src="../../js/jquery-1.8.0.min.js" tppabs="http://beginwithjava.com/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+   <script src="../../js/script.js" tppabs="http://beginwithjava.com/js/script.js"></script>
+
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+
+  <body>
+
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <!-- BEGIN header -->
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li class="active"><a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li><a href="../../servlet-jsp/index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+
+
+
+
+
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+
+        </div>
+        <!-- end logo -->
+
+        <!-- begin banner ad -->
+        
+<div class="box">
+<script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+</div>
+
+
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+
+
+
+
+
+  <div id="content">
+  <div class="navigation">
+  <p><a href="objects-classes.html" tppabs="http://beginwithjava.com/java/classes-i/objects-classes.html">Previous Section</a> | <a href="constructors.html" tppabs="http://beginwithjava.com/java/classes-i/constructors.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/java/classes-i/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+
+          <h3 class="hline">6.2 Designing a class </h3>
+          <p>For example, suppose that you want to design the class Rectangle that implements the basic properties of a Rectangle. Now every Rectangle has a width and height, which can be a floating-point value. Therefore, when you created an object of the class Rectangle, then you must store the length and width of the Rectangle into that object. Next, the two basic operations that are performed on a Rectangle are to find the area and perimeter of the Rectangle. Thus, the class Rectangle must provide these two operations. This class needs to provide a few other operations to effectively use this class in a program. In skeleton form, the definition of the class Rectangle looks as follows: </p>
+          <pre><code>public class Rectangle
+{
+   private double length;
+   private double width;
+
+   public double getArea()
+   {
+      // code to determine the area of the Rectangle
+   }
+
+   public double getPerimeter()
+   {
+      // code to determine the perimeter of the Rectangle
+   }
+
+   // Additional methods as needed ...
+}</code></pre>
+          <p>             In the definition of the class Rectangle, the variable length and width is declared with the keyword <strong>private</strong> and the methods area and perimeter are declared with the keyword <strong>public</strong>.When a member of a class is declared <strong>private</strong>. It can be used only by the methods of that class.    The <strong>public</strong> access modifier permits a member to be accessed by code outside the class.<br />
+            <br>
+          </p>
+			<p>Here is complete class example : (Rectangle.java)			</p>
+			<pre><code>/**
+ * The Rectangle class stores and manipulates
+ * data for a rectangle.
+ */
+public class Rectangle
+{
+   private double length;
+   private double width;
+
+   /**
+    * The set method accepts two arguments
+    * which are stored in the length and width fields
+    */
+   public void set(double l, double w)
+   {
+      length = l;
+      width  = w;
+   }
+
+   /**
+    * The getArea method computes and returns the area
+    */
+   public double getArea()
+   {
+      return length * width;
+   }
+
+   /**
+    * The getPerimeter method computes and returns the perimter
+    */
+   public double getPerimeter()
+   {
+      return 2 * (length + width);
+   }
+}</code></pre>
+          <h3>Variable Declaration and Object Instantiation     </h3>
+          <p>Once a class is defined, you can declare reference variables of that class type. For example, the following statement declare rectangle1  to be reference variables of type Rectangle</p>
+<pre><code>Rectangle rectangle1;</code></pre>
+<p>To store the length and width, we need to create a Rectangle object, which is accomplished by using the operator new          : </p>
+<pre><code>rectangle1 = new Rectangle();</code></pre>
+<p>You can combine variable declaration and object instantiation in one statement<br>
+</p>
+<pre><code>Rectangle rectangle 2 = new Rectangle();</code></pre>
+<h3>&nbsp;</h3>
+<h3><img src="../images/reference-variable-object.png" tppabs="http://beginwithjava.com/java/images/reference-variable-object.png" width="558" height="191" alt="reference-variable-in-java" /></h3>
+<h3>&nbsp;</h3>
+<h3>Accessing Class Members</h3>
+<p>Once an object of a class is created, the object can access the members of the class using dot . operator : </p>
+          <pre><code>rectangle1.set(4.1,6.3)</code></pre>
+          <p>(RectangleDemo. Java) </p>
+          <pre><code>/**
+ * This program test the Rectangle
+ * class methods.
+ */
+public class RectangleDemo
+{
+   public static void main(String[] args)
+   {
+      // Create a Rectangle object
+      Rectangle rectangle1 = new Rectangle();
+
+      // Accessing class members
+      rectangle1.set(4.2, 6.2);
+      System.out.println("Area of Rectangle is "
+                         + rectangle1.getArea());
+      System.out.println("Perimeter of Rectangle is "
+                         + rectangle1.getPerimeter());
+   }
+}</code></pre>
+<div class="output">
+          <p><strong>Output :</strong></p>
+          <p>Area of Rectangle is 26.04<br />
+          Perimeter of Rectangle is 20.8</p>
+</div>
+        </div>
+      </div>
+      <div class="navigation">
+        <p><a href="objects-classes.html" tppabs="http://beginwithjava.com/java/classes-i/objects-classes.html">Previous Section</a> |<a href="constructors.html" tppabs="http://beginwithjava.com/java/classes-i/constructors.html"> Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/java/classes-i/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div><div id='cssmenu'>
+<ul>
+   <li>Menu</li>
+   <li class='has-sub'><a href='#'><span>Java Fundamentals</span></a>
+      <ul class="hd">
+         <li><a href="../fundamentals/java-technology.html" tppabs="http://beginwithjava.com/java/fundamentals/java-technology.html"><span>1.1 Getting Started</span></a></li>
+		 <li><a href="../fundamentals/first-application.html" tppabs="http://beginwithjava.com/java/fundamentals/first-application.html"><span>1.2 Creating Your First Application</span></a></li>
+		 <li><a href="../fundamentals/part-of-program.html" tppabs="http://beginwithjava.com/java/fundamentals/part-of-program.html"><span>1.3 Parts of a Java Program</span></a></li>
+		<li><a href="../fundamentals/variables-and-literals.html" tppabs="http://beginwithjava.com/java/fundamentals/variables-and-literals.html"><span>1.4 Variables and Literals</span></a></li>
+		<li><a href="../fundamentals/primitive-data-type.html" tppabs="http://beginwithjava.com/java/fundamentals/primitive-data-type.html"><span>1.5 Primitive Data Types</span></a></li>
+		<li><a href="../fundamentals/arithmetic-operator.html" tppabs="http://beginwithjava.com/java/fundamentals/arithmetic-operator.html"><span>1.6 Arithmetic Operators</span></a></li>
+		<li><a href="../fundamentals/operator-precedence.html" tppabs="http://beginwithjava.com/java/fundamentals/operator-precedence.html"><span>1.7 Operator Precedence</span></a></li>
+		<li><a href="../fundamentals/type-conversion-and-casting.html" tppabs="http://beginwithjava.com/java/fundamentals/type-conversion-and-casting.html"><span>1.8 Type Conversion and Casting</span></a></li>
+		<li><a href="../fundamentals/questions.html" tppabs="http://beginwithjava.com/java/fundamentals/questions.html"><span>Questions and Exercises</span></a></li> 
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Objects and Input/Output</span></a>
+      <ul class="hd">
+         <li><a href="../inputoutput/class-string.html" tppabs="http://beginwithjava.com/java/inputoutput/class-string.html"><span>2.1 Class String</span></a></li>
+		 <li><a href="../inputoutput/reference-variable.html" tppabs="http://beginwithjava.com/java/inputoutput/reference-variable.html"><span>2.2 Objects and Reference Variables</span></a></li>
+		 <li><a href="../inputoutput/class-math.html" tppabs="http://beginwithjava.com/java/inputoutput/class-math.html"><span>2.3 Class Math Methods</span></a></li>
+		 <li><a href="../inputoutput/string-method.html" tppabs="http://beginwithjava.com/java/inputoutput/string-method.html"><span>2.4 String Methods</span></a></li>
+		 <li><a href="../inputoutput/reading-keyboard-input.html" tppabs="http://beginwithjava.com/java/inputoutput/reading-keyboard-input.html"><span>2.5 Reading Keyboard Input</span></a></li>
+		 <li><a href="../inputoutput/dialog-boxes.html" tppabs="http://beginwithjava.com/java/inputoutput/dialog-boxes.html"><span>2.6 Dialog Boxes for Input/Output</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Decision Structures</span></a>
+      <ul class="hd">
+         <li><a href="../decisions/if-else-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-statement.html"><span>3.1 The if-else Statement</span></a></li>
+		 <li><a href="../decisions/if-else-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-if-statement.html"><span>3.2 The if-else-if Statement</span></a></li>
+		 <li><a href="../decisions/nested-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/nested-if-statement.html"><span>3.3 Nested if Statement</span></a></li>
+		 <li><a href="../decisions/logical-operators.html" tppabs="http://beginwithjava.com/java/decisions/logical-operators.html"><span>3.4 Logical Operators</span></a></li>
+		 <li><a href="../decisions/comparing-string-objects.html" tppabs="http://beginwithjava.com/java/decisions/comparing-string-objects.html"><span>3.5 Comparing String Objects</span></a></li>
+		 <li><a href="../decisions/switch-statement.html" tppabs="http://beginwithjava.com/java/decisions/switch-statement.html"><span>3.6 The switch Statement</span></a></li>
+		 <li><a href="../decisions/conditional-operator.html" tppabs="http://beginwithjava.com/java/decisions/conditional-operator.html"><span>3.7 Conditional Operator</span></a></li>
+		 <li><a href="../decisions/questions.html" tppabs="http://beginwithjava.com/java/decisions/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Loops</span></a>      <ul class="hd">
+         <li><a href="../loops/increment-decrement-operators.html" tppabs="http://beginwithjava.com/java/loops/increment-decrement-operators.html"><span>4.1 The Increment and Decrement Operators</span></a></li>
+		 <li><a href="../loops/while-loop.html" tppabs="http://beginwithjava.com/java/loops/while-loop.html"><span>4.2 The while Loop</span></a></li>
+		<li><a href="../loops/do-while-loop.html" tppabs="http://beginwithjava.com/java/loops/do-while-loop.html"><span>4.3 The do-while Loop</span></a></li>
+		<li><a href="../loops/for-loop.html" tppabs="http://beginwithjava.com/java/loops/for-loop.html"><span>4.4 The for Loop</span></a></li>
+		<li><a href="../loops/nested-loop.html" tppabs="http://beginwithjava.com/java/loops/nested-loop.html"><span>4.5 Nested Loops</span></a></li>
+		<li><a href="../loops/break-continue-statement.html" tppabs="http://beginwithjava.com/java/loops/break-continue-statement.html"><span>4.6 The break and continue Statements</span></a></li>
+		<li><a href="../loops/questions.html" tppabs="http://beginwithjava.com/java/loops/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Methods</span></a>
+      <ul class="hd">
+         <li><a href="../methods/introduction-to-methods.html" tppabs="http://beginwithjava.com/java/methods/introduction-to-methods.html"><span>5.1 Introduction to Methods</span></a></li>
+		<li><a href="../methods/void-methods.html" tppabs="http://beginwithjava.com/java/methods/void-methods.html"><span>5.2 void Methods</span></a></li>
+		<li><a href="../methods/passing-arguments-to-a-method.html" tppabs="http://beginwithjava.com/java/methods/passing-arguments-to-a-method.html"><span>5.3 Passing Arguments to a Method</span></a></li>
+		<li><a href="../methods/local-variables.html" tppabs="http://beginwithjava.com/java/methods/local-variables.html"><span>5.4 Local Variables</span></a></li>
+		<li><a href="../methods/returning-value-from-a-method.html" tppabs="http://beginwithjava.com/java/methods/returning-value-from-a-method.html"><span>5.5 Returning a Value from a Method</span></a></li>
+		<li><a href="../methods/questions.html" tppabs="http://beginwithjava.com/java/methods/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Introducing Classes</span></a>
+      <ul>
+         <li><a href="objects-classes.html" tppabs="http://beginwithjava.com/java/classes-i/objects-classes.html"><span>6.1 Objects and Classes</span></a></li>
+		<li><a href="simple-class.html" tppabs="http://beginwithjava.com/java/classes-i/simple-class.html" class="current"><span>6.2 Designing a Class</span></a></li>
+		<li><a href="constructors.html" tppabs="http://beginwithjava.com/java/classes-i/constructors.html"><span>6.3 Constructors</span></a></li>
+		<li><a href="overloading-methods.html" tppabs="http://beginwithjava.com/java/classes-i/overloading-methods.html"><span>6.4 Overloading Methods</span></a></li>
+		<li><a href="uml-diagram.html" tppabs="http://beginwithjava.com/java/classes-i/uml-diagram.html"><span>6.5 UML Diagram</span></a></li>
+		<li><a href="questions.html" tppabs="http://beginwithjava.com/java/classes-i/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Arrays and the ArrayList Class</span></a>
+      <ul class="hd">
+         <li><a href="../arrays-arraylist/introduction-to-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/introduction-to-arrays.html"><span>7.1 Introduction to Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/processing-array-elements.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/processing-array-elements.html"><span>7.2 Processing Array Elements</span></a></li>
+		<li><a href="../arrays-arraylist/passing-arrays-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/passing-arrays-as-arguments-to-methods.html"><span>7.3 Passing Arrays as Arguments to Methods</span></a></li>
+		<li><a href="../arrays-arraylist/common-array-operations.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/common-array-operations.html"><span>7.4 Common Array Operations</span></a></li>
+		<li><a href="../arrays-arraylist/returning-arrays-from-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/returning-arrays-from-methods.html"><span>7.5 Returning Arrays from Methods</span></a></li>
+		<li><a href="../arrays-arraylist/string-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/string-arrays.html"><span>7.6 String Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/arrays-of-objects.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/arrays-of-objects.html"><span>7.7 Arrays of Objects</span></a></li>
+		<li><a href="../arrays-arraylist/two-dimensional-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/two-dimensional-arrays.html"><span>7.8 Two-Dimensional Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/variable-length-argument-lists.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/variable-length-argument-lists.html"><span>7.9 Variable-Length Argument Lists</span></a></li>
+		<li><a href="../arrays-arraylist/the-array-list-class.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/the-array-list-class.html"><span>7.10 The ArrayList Class</span></a></li>
+		<li><a href="../arrays-arraylist/questions.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>A Closer Look at Classes and Methods</span></a>
+      <ul class="hd">
+         <li><a href="../classes-ii/static-class-members.html" tppabs="http://beginwithjava.com/java/classes-ii/static-class-members.html"><span>8.1 Static Class Members</span></a></li>
+		<li><a href="../classes-ii/passing-objects-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/passing-objects-as-arguments-to-methods.html"><span>8.2 Passing Objects as Arguments to Methods</span></a></li>
+		<li><a href="../classes-ii/returning-objects-from-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/returning-objects-from-methods.html"><span>8.3 Returning Objects from Methods</span></a></li>
+		<li><a href="../classes-ii/the-to-string-method.html" tppabs="http://beginwithjava.com/java/classes-ii/the-to-string-method.html"><span>8.4 The toString Method</span></a></li>
+		<li><a href="../classes-ii/the-this-reference-variable.html" tppabs="http://beginwithjava.com/java/classes-ii/the-this-reference-variable.html"><span>8.5 The this Reference Variable</span></a></li>
+		<li><a href="../classes-ii/aggregation.html" tppabs="http://beginwithjava.com/java/classes-ii/aggregation.html"><span>8.6 Aggregation</span></a></li>
+		<li><a href="../classes-ii/garbage-collection.html" tppabs="http://beginwithjava.com/java/classes-ii/garbage-collection.html"><span>8.7 Garbage Collection</span></a></li>
+		<li><a href="../classes-ii/questions.html" tppabs="http://beginwithjava.com/java/classes-ii/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Inheritance and Polymorphism</span></a>
+      <ul class="hd">
+         <li><a href="../inheritance/what-is-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/what-is-inheritance.html"><span>9.1 What Is Inheritance?</span></a></li>
+		<li><a href="../inheritance/calling-the-superclass-constructor.html" tppabs="http://beginwithjava.com/java/inheritance/calling-the-superclass-constructor.html"><span>9.2 Calling the Superclass Constructor</span></a></li>
+		<li><a href="../inheritance/overriding-superclass-methods.html" tppabs="http://beginwithjava.com/java/inheritance/overriding-superclass-methods.html"><span>9.3 Overriding Superclass Methods</span></a></li>
+		<li><a href="../inheritance/protected-member.html" tppabs="http://beginwithjava.com/java/inheritance/protected-member.html"><span>9.4 Protected Member</span></a></li>
+		<li><a href="../inheritance/multilevel-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/multilevel-inheritance.html"><span>9.5 Multilevel Inheritance</span></a></li>
+		<li><a href="../inheritance/object-class.html" tppabs="http://beginwithjava.com/java/inheritance/object-class.html"><span>9.6 The object Class</span></a></li>
+		<li><a href="../inheritance/polymorphism.html" tppabs="http://beginwithjava.com/java/inheritance/polymorphism.html"><span>9.7 Polymorphism</span></a></li>
+		<li><a href="../inheritance/abstract-classes-abstract-method.html" tppabs="http://beginwithjava.com/java/inheritance/abstract-classes-abstract-method.html"><span>9.8 Abstract Classes and Abstract Method</span></a></li>
+		<li><a href="../inheritance/interfaces.html" tppabs="http://beginwithjava.com/java/inheritance/interfaces.html"><span>9.9 Interfaces</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>File Input and Output</span></a>
+      <ul class="hd">
+         <li><a href="../file-input-output/introduction-file-input-output.html" tppabs="http://beginwithjava.com/java/file-input-output/introduction-file-input-output.html"><span>10.1 Introduction to File Input and Output</span></a></li>
+		 <li><a href="../file-input-output/writing-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/writing-text-file.html"><span>10.2 Writing Data to Text File</span></a></li>
+		<li><a href="../file-input-output/reading-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-text-file.html"><span>10.3 Reading Data from Text File</span></a></li>
+		<li><a href="../file-input-output/reading-writing-premitive-data-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-writing-premitive-data-text-file.html"><span>10.4 Reading and Writing Premitive Data</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>Exception Handling</span></a>
+      <ul class="hd">
+         <li><a href="../exception/handling-exception.html" tppabs="http://beginwithjava.com/java/exception/handling-exception.html"><span>11.1 Handling Exception</span></a></li>
+		 <li><a href="../exception/try-catch-multicatch.html" tppabs="http://beginwithjava.com/java/exception/try-catch-multicatch.html"><span>11.2 Try Catch Block and Multi Catch</span></a></li>
+		<li><a href="../exception/finally-block.html" tppabs="http://beginwithjava.com/java/exception/finally-block.html"><span>11.3 Finally Block</span></a></li>
+		<li><a href="../exception/try-with-resources.html" tppabs="http://beginwithjava.com/java/exception/try-with-resources.html"><span>11.4 Try with Resources</span></a></li>
+		<li><a href="../exception/checked-unchecked-exceptions.html" tppabs="http://beginwithjava.com/java/exception/checked-unchecked-exceptions.html"><span>11.5 Checked and Unchecked Exceptions</span></a></li>
+		<li><a href="../exception/rethrowing-throwing-an-exception.html" tppabs="http://beginwithjava.com/java/exception/rethrowing-throwing-an-exception.html"><span>11.6 Rethrowing and Throwing an Exception</span></a></li>
+		<li><a href="../exception/creating-your-own-exception-classes.html" tppabs="http://beginwithjava.com/java/exception/creating-your-own-exception-classes.html"><span>11.7 Creating Your Own Exception Classes</span></a></li>
+      </ul>
+   </li>   
+</ul>
+<div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+ 
+ <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+  
+</div>
+
+</div>
+  <!-- end sidebar -->
+
+
+
+
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+
+  </div>
+  <!-- wrap ends here -->
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+
+</html>

@@ -1,0 +1,870 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" tppabs="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content=" Programming question excercise in java using if, if..else, swith case. Solve program yourself then check the answer given. " />
+   <meta name="Keywords" content="program, question, write, year" />
+   
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/java/decisions/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+  <title>Questions and Exercises - Decision Structure
+</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<link rel="stylesheet" href="../../css/menustyle.css" tppabs="http://beginwithjava.com/css/menustyle.css">
+   <script src="../../js/jquery-1.8.0.min.js" tppabs="http://beginwithjava.com/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+   <script src="../../js/script.js" tppabs="http://beginwithjava.com/js/script.js"></script>
+
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li class="active"><a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li><a href="../../servlet-jsp/index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+
+
+
+
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="conditional-operator.html" tppabs="http://beginwithjava.com/java/decisions/conditional-operator.html">Previous Section</a> | <a href="index.html" tppabs="http://beginwithjava.com/java/decisions/index.html">Next Chapter </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">Programming Questions and Exercises : Decision </h3>
+<p><strong>Question 1</strong></p>
+<p><strong>Even or Odd<br />
+</strong>Write a program that asks the user to enter a number and displays  whether entered number is an odd number or even number. </p>
+<p><button class="round" onclick="$('#answer1').slideToggle();">Show the answer.</button></p>
+    <div id="answer1" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class EvenOdd
+{
+    public static void main(String[] args)
+    {
+        int number;
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get number from the user.
+        System.out.print("Enter an integer: ");
+        number = console.nextInt();
+
+        // Determine even or odd.
+        if (number % 2 == 0)
+        {
+            System.out.println("number is even");
+        } 
+        else
+        {
+            System.out.println("number is odd");
+        }
+    }
+}</code></pre></div>
+    
+<p>&nbsp;</p>
+<p><strong>Question 2</strong> </p>
+<p><strong>Absolute value</strong><br />
+  Write a program that asks the user to enter a number and displays the  absolute value of that number. </p>
+<p><button class="round" onclick="$('#answer2').slideToggle();">Show the answer.</button></p>
+    <div id="answer2" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class AbsoluteValue
+{
+    public static void main(String[] args)
+    {
+        int number;
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get number from the user.
+        System.out.print("Enter an integer: ");
+        number = console.nextInt();
+
+        // Change sign if number is negative.
+        if (number < 0)
+        {
+            number = -number;
+        }
+
+        // Display absolute value of number.        
+        System.out.println("Absolute value: " + number);
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 3</strong> </p>
+<p><strong>Discount and Revenue</strong><br />
+  Revenue can be calculated as the selling price of the product  times the quantity sold, i.e. revenue = price &times; quantity.&nbsp;Write a program  that asks the user to enter product price and quantity and then calculate the revenue.  If the revenue is more than 5000 a discount is 10% offered. Program should  display the discount and net revenue. </p>
+<p><button class="round" onclick="$('#answer3').slideToggle();">Show the answer.</button></p>
+    <div id="answer3" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class RevenueCalc
+{
+    public static void main(String[] args)
+    {
+        int revenue, price, quantity;
+        int discount = 0; // To hold discount
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get value from the user.
+        System.out.print("Enter price of product: ");
+        price = console.nextInt();
+
+        System.out.print("Enter quantity of product: ");
+        quantity = console.nextInt();
+
+        // Calculate revenue.
+        revenue = price * quantity;
+
+        if (revenue > 5000)
+        {
+            // Calculate discount.
+            discount = revenue * 10 / 100;
+            // Calculate net revenue.
+            revenue = revenue - discount;
+        }
+
+        // Display Discount and net revenue.
+        System.out.println("The discount is " + discount);
+        System.out.println("The net revenue is " + revenue);
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 4</strong> </p>
+<p><strong>Largest Number</strong><br />
+  Write a program that asks the user to enter a numbers in three variables and then displays the largest number.</p>
+<p><button class="round" onclick="$('#answer4').slideToggle();">Show the answer.</button></p>
+    <div id="answer4" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class LargestNumber
+{
+    public static void main(String[] args)
+    {
+        int number1, number2, number3; // To hold three numbers.
+        int largest; // To hold largest number.
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get numbers from the user.
+        System.out.print("Enter first number: ");
+        number1 = console.nextInt();
+
+        System.out.print("Enter second number: ");
+        number2 = console.nextInt();
+
+        System.out.print("Enter third number: ");
+        number3 = console.nextInt();
+
+        // Determine largest number.
+        if (number1 > number2 && number1 > number3)
+        {
+            largest = number1;
+        }
+        else if (number2 > number3)
+        {
+            largest = number2;
+        }
+        else
+        {
+            largest = number3;
+        }
+
+        // Display largest number.
+        System.out.println("Largest number: " + largest);
+    }
+}</code></pre></div>
+    <p>&nbsp;</p>
+<p><strong>Question 5</strong> </p>
+<p><strong>Positive, negative or zero</strong><br />
+  Write a program that prompts the user to input a number. The  program should then output the number and a message saying whether the number  is positive, negative, or zero.</p>
+<p><button class="round" onclick="$('#answer5').slideToggle();">Show the answer.</button></p>
+    <div id="answer5" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class PositiveNegativeZero
+{
+    public static void main(String[] args)
+    {
+        int number; // To hold a number.
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get number from the user.
+        System.out.print("Enter an integer: ");
+        number = console.nextInt();
+
+        // Determine positive, negative or zero.
+        if (number > 0)
+        {
+            System.out.println("Number is positive");
+        }
+        else if (number < 0)
+        {
+            System.out.println("Number is negative.");
+        }
+        else
+        {
+            System.out.println("Number is zero.");
+        }
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 6</strong></p>
+<p><strong>Valid Triangle<br />
+  </strong>A triangle is valid if the sum of  all the three angles is equal to 180 degrees. Write a program that asks  the user to enter three integers as angles and check whether a triangle is valid or not.</p>
+<p><button class="round" onclick="$('#answer6').slideToggle();">Show the answer.</button></p>
+    <div id="answer6" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class TriangleTest
+{
+    public static void main(String[] args)
+    {
+        int angle1, angle2, angle3; // To hold three angles.
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get angles from the user.
+        System.out.print("Enter first angle: ");
+        angle1 = console.nextInt();
+
+        System.out.print("Enter second angle: ");
+        angle2 = console.nextInt();
+
+        System.out.print("Enter third angle: ");
+        angle3 = console.nextInt();
+
+        // Determine validity of triangle.
+        if (angle1 + angle2 + angle3 == 180)
+        {
+            System.out.println("Triangle is valid");
+        }
+        else
+        {
+            System.out.println("Triangle is not valid");
+        }
+    }
+}</code></pre></div>
+<p><br />
+  <strong>Question 7</strong> </p>
+<p><strong>Leap Year</strong><br />
+  Any year is input by the user. Write  a program to determine whether the year is a leap year or not.</p>
+<p>Leap Years are any year that can be&nbsp;evenly  divided by 4.&nbsp; A&nbsp;year&nbsp;that is evenly divisible  by 100 is a&nbsp;leap year&nbsp;only if it is also evenly divisible by 400.</p>
+<p>Example : <br />
+  1992&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leap Year<br />
+  2000&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Leap Year<br />
+  1900&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;NOT a Leap  Year</p>
+  <p><button class="round" onclick="$('#answer7').slideToggle();">Show the answer.</button></p>
+    <div id="answer7" style="display:none;">
+    <pre><code>import java.util.Scanner;     // Needed for the Scanner class
+
+public class Leapyear
+{
+   public static void main(String[] args)
+   {
+      int year;    // holds a year
+
+      // Create a Scanner object for keyboard input.
+      Scanner console = new Scanner(System.in);
+
+      // Get the year.
+      System.out.print("Enter a year : ");
+      year = console.nextInt();
+
+      // Determine whether the year is leap year.
+      if ((year % 4 == 0) && ((year % 400 == 0) || (year % 100 != 0)))
+      {
+         System.out.println("A leap year");
+      }
+      else
+      {
+         System.out.println("Not a leap year");
+      }
+   }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 8</strong></p>
+<p><strong>Telephone Bill</strong><br />
+  Write a program to calculate the  monthly telephone bills as per the following rule:&nbsp;<br />
+  Minimum Rs. 200 for up to 100 calls.&nbsp;<br />
+  Plus Rs. 0.60 per call for next 50 calls.&nbsp;<br />
+  Plus Rs. 0.50 per call for next 50 calls.&nbsp;<br />
+  Plus Rs. 0.40 per call for any call beyond 200 calls. </p>
+  <p><button class="round" onclick="$('#answer8').slideToggle();">Show the answer.</button></p>
+    <div id="answer8" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class TelephoneBill
+{
+    public static void main(String[] args)
+    {
+        int numberOfCalls;
+        double bill;
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get value from the user.
+        System.out.print("Enter number of calls: ");
+        numberOfCalls = console.nextInt();
+
+        // Calculate bill.
+        if (numberOfCalls <= 100)
+        {
+            bill = 200;
+        } 
+        else if (numberOfCalls <= 150)
+        {
+            bill = 200 + (numberOfCalls - 100) * 0.60;
+        } 
+        else if (numberOfCalls <= 200)
+        {
+            bill = 200 + 50 * 0.60
+                    + (numberOfCalls - 150) * 0.50;
+        } 
+        else
+        {
+            bill = 200 + 50 * 0.60 + 50 * 0.50
+                    + (numberOfCalls - 200) * 0.40;
+        }
+
+        // Display bill.
+        System.out.println("The bill is Rs. " + bill);
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 9</strong></p>
+<p><strong>Grade Calculator<br />
+</strong>The marks obtained by a student in 3  different subjects are input by the user. Your program should calculate the  average of subjects. The student gets a grade as per the following rules:<br />
+</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td width="75">Average </td>
+    <td width="54"><p>Grade</p></td>
+  </tr>
+  <tr>
+    <td width="75"><p>90-100</p></td>
+    <td width="54"><p>A</p></td>
+  </tr>
+  <tr>
+    <td width="75"><p>80-89</p></td>
+    <td width="54"><p>B</p></td>
+  </tr>
+  <tr>
+    <td width="75"><p>70-79</p></td>
+    <td width="54"><p>C</p></td>
+  </tr>
+  <tr>
+    <td width="75"><p>60-69</p></td>
+    <td width="54"><p>D</p></td>
+  </tr>
+  <tr>
+    <td width="75"><p>0-59</p></td>
+    <td width="54"><p>F</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><button class="round" onclick="$('#answer9').slideToggle();">Show the answer.</button></p>
+    <div id="answer9" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class GradeCalc
+{
+    public static void main(String[] args)
+    {
+        int marks1, marks2, marks3; // To hold marks in three subjects
+        double average; // To hold average Marks
+        char grade; // To hold grade
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get value from the user.
+        System.out.print("Enter marks of subject 1: ");
+        marks1 = console.nextInt();
+
+        System.out.print("Enter marks of subject 2: ");
+        marks2 = console.nextInt();
+
+        System.out.print("Enter marks of subject 3: ");
+        marks3 = console.nextInt();
+
+        // Calculate average marks.
+        average = (marks1 + marks2 + marks3) / 3.0;
+
+        if (average >= 90)
+        {
+            grade = 'A';
+        } 
+        else if (average >= 80)
+        {
+            grade = 'B';
+        } 
+        else if (average >= 70)
+        {
+            grade = 'C';
+        } 
+        else if (average >= 60)
+        {
+            grade = 'D';
+        } 
+        else
+        {
+            grade = 'F';
+        }
+
+        // Display grade.
+        System.out.println("Grade is: " + grade);
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 10</strong></p>
+<p><strong>Meaning of Grade<br />
+</strong>Write a program that prompts the  user to enter grade. Your program should display the corresponding meaning of  grade as per the following table</p>
+<table border="1" cellspacing="0" cellpadding="0">
+  <tr>
+    <td><p>Grade</p></td>
+    <td><p>Meaning</p></td>
+  </tr>
+  <tr>
+    <td><p>A</p></td>
+    <td><p>Excellent</p></td>
+  </tr>
+  <tr>
+    <td><p>B</p></td>
+    <td><p>Good</p></td>
+  </tr>
+  <tr>
+    <td><p>C</p></td>
+    <td><p>Average</p></td>
+  </tr>
+  <tr>
+    <td><p>D</p></td>
+    <td><p>Deficient</p></td>
+  </tr>
+  <tr>
+    <td><p>F</p></td>
+    <td><p>Failing</p></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+<p><button class="round" onclick="$('#answer10').slideToggle();">Show the answer.</button></p>
+    <div id="answer10" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class GradeMeaning
+{
+    public static void main(String[] args)
+    {
+        char grade; // To hold grade
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get grade from the user.
+        System.out.print("Enter grade: ");
+        grade = console.next().charAt(0);
+
+        // Determine and display grade
+        switch (grade)
+        {
+        case 'A':
+            System.out.println("Excellent");
+            break;
+        case 'B':
+            System.out.println("Good");
+            break;
+        case 'C':
+            System.out.println("Average");
+            break;
+        case 'D':
+            System.out.println("Deficient");
+            break;
+        case 'F':
+            System.out.println("Failing");
+            break;
+        default:
+            System.out.println("Invalid input");
+        }
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+<p><strong>Question 11</strong></p>
+<p><strong>Descending Order Names</strong></p>
+<p>Write a program that prompts the  user to enter three names. Your program should display the names in descending  order.</p>
+<p><button class="round" onclick="$('#answer11').slideToggle();">Show the answer.</button></p>
+    <div id="answer11" style="display:none;">
+    <pre><code>import java.util.Scanner;
+
+public class DescendingNames
+{
+    public static void main(String[] args)
+    {
+        String name1, name2, name3; // To hold three names
+
+        // Create a Scanner object to read input.
+        Scanner console = new Scanner(System.in);
+
+        // Get names from the user.
+        System.out.print("Enter name 1: ");
+        name1 = console.nextLine();
+
+        System.out.print("Enter name 2: ");
+        name2 = console.nextLine();
+
+        System.out.print("Enter name 3: ");
+        name3 = console.nextLine();
+ 
+        //Arrange names in Descending order
+        if (name1.compareTo(name2) > 0
+                && name1.compareTo(name3) > 0)
+        {
+            System.out.println(name1);
+            if (name2.compareTo(name3) > 0)
+            {
+                System.out.println(name2);
+                System.out.println(name3);
+            }
+            else
+            {
+                System.out.println(name3);
+                System.out.println(name2);
+            }
+        }
+
+        else if (name2.compareTo(name1) > 0
+                && name2.compareTo(name3) > 0)
+        {
+            System.out.println(name2);
+            if (name1.compareTo(name3) > 0)
+            {
+                System.out.println(name1);
+                System.out.println(name3);
+            }
+            else
+            {
+                System.out.println(name3);
+                System.out.println(name1);
+            }
+        }
+
+        else
+        {
+            System.out.println(name3);
+            if (name1.compareTo(name2) > 0)
+            {
+                System.out.println(name1);
+                System.out.println(name2);
+            }
+            else
+            {
+                System.out.println(name2);
+                System.out.println(name1);
+            }
+        }
+    }
+}</code></pre></div>
+<p>&nbsp;</p>
+        </div>
+        <div class="navigation">
+  <p><a href="conditional-operator.html" tppabs="http://beginwithjava.com/java/decisions/conditional-operator.html">Previous Section</a> | <a href="index.html" tppabs="http://beginwithjava.com/java/decisions/index.html">Next Chapter </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div><div id='cssmenu'>
+<ul>
+   <li>Menu</li>
+   <li class='has-sub'><a href='#'><span>Java Fundamentals</span></a>
+      <ul class="hd">
+         <li><a href="../fundamentals/java-technology.html" tppabs="http://beginwithjava.com/java/fundamentals/java-technology.html"><span>1.1 Getting Started</span></a></li>
+		 <li><a href="../fundamentals/first-application.html" tppabs="http://beginwithjava.com/java/fundamentals/first-application.html"><span>1.2 Creating Your First Application</span></a></li>
+		 <li><a href="../fundamentals/part-of-program.html" tppabs="http://beginwithjava.com/java/fundamentals/part-of-program.html"><span>1.3 Parts of a Java Program</span></a></li>
+		<li><a href="../fundamentals/variables-and-literals.html" tppabs="http://beginwithjava.com/java/fundamentals/variables-and-literals.html"><span>1.4 Variables and Literals</span></a></li>
+		<li><a href="../fundamentals/primitive-data-type.html" tppabs="http://beginwithjava.com/java/fundamentals/primitive-data-type.html"><span>1.5 Primitive Data Types</span></a></li>
+		<li><a href="../fundamentals/arithmetic-operator.html" tppabs="http://beginwithjava.com/java/fundamentals/arithmetic-operator.html"><span>1.6 Arithmetic Operators</span></a></li>
+		<li><a href="../fundamentals/operator-precedence.html" tppabs="http://beginwithjava.com/java/fundamentals/operator-precedence.html"><span>1.7 Operator Precedence</span></a></li>
+		<li><a href="../fundamentals/type-conversion-and-casting.html" tppabs="http://beginwithjava.com/java/fundamentals/type-conversion-and-casting.html"><span>1.8 Type Conversion and Casting</span></a></li>
+		<li><a href="../fundamentals/questions.html" tppabs="http://beginwithjava.com/java/fundamentals/questions.html"><span>Questions and Exercises</span></a></li> 
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Objects and Input/Output</span></a>
+      <ul class="hd">
+         <li><a href="../inputoutput/class-string.html" tppabs="http://beginwithjava.com/java/inputoutput/class-string.html"><span>2.1 Class String</span></a></li>
+		 <li><a href="../inputoutput/reference-variable.html" tppabs="http://beginwithjava.com/java/inputoutput/reference-variable.html"><span>2.2 Objects and Reference Variables</span></a></li>
+		 <li><a href="../inputoutput/class-math.html" tppabs="http://beginwithjava.com/java/inputoutput/class-math.html"><span>2.3 Class Math Methods</span></a></li>
+		 <li><a href="../inputoutput/string-method.html" tppabs="http://beginwithjava.com/java/inputoutput/string-method.html"><span>2.4 String Methods</span></a></li>
+		 <li><a href="../inputoutput/reading-keyboard-input.html" tppabs="http://beginwithjava.com/java/inputoutput/reading-keyboard-input.html"><span>2.5 Reading Keyboard Input</span></a></li>
+		 <li><a href="../inputoutput/dialog-boxes.html" tppabs="http://beginwithjava.com/java/inputoutput/dialog-boxes.html"><span>2.6 Dialog Boxes for Input/Output</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub active'><a href='#'><span>Decision Structures</span></a>      <ul>
+         <li><a href="if-else-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-statement.html"><span>3.1 The if-else Statement</span></a></li>
+		 <li><a href="if-else-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-if-statement.html"><span>3.2 The if-else-if Statement</span></a></li>
+		 <li><a href="nested-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/nested-if-statement.html"><span>3.3 Nested if Statement</span></a></li>
+		 <li><a href="logical-operators.html" tppabs="http://beginwithjava.com/java/decisions/logical-operators.html"><span>3.4 Logical Operators</span></a></li>
+		 <li><a href="comparing-string-objects.html" tppabs="http://beginwithjava.com/java/decisions/comparing-string-objects.html"><span>3.5 Comparing String Objects</span></a></li>
+		 <li><a href="switch-statement.html" tppabs="http://beginwithjava.com/java/decisions/switch-statement.html"><span>3.6 The switch Statement</span></a></li>
+		 <li><a href="conditional-operator.html" tppabs="http://beginwithjava.com/java/decisions/conditional-operator.html"><span>3.7 Conditional Operator</span></a></li>
+		 <li><a href="questions.html" tppabs="http://beginwithjava.com/java/decisions/questions.html" class="current"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Loops</span></a>        <ul class="hd">
+      
+         <li><a href="../loops/increment-decrement-operators.html" tppabs="http://beginwithjava.com/java/loops/increment-decrement-operators.html"><span>4.1 The Increment and Decrement Operators</span></a></li>
+		 <li><a href="../loops/while-loop.html" tppabs="http://beginwithjava.com/java/loops/while-loop.html"><span>4.2 The while Loop</span></a></li>
+		<li><a href="../loops/do-while-loop.html" tppabs="http://beginwithjava.com/java/loops/do-while-loop.html"><span>4.3 The do-while Loop</span></a></li>
+		<li><a href="../loops/for-loop.html" tppabs="http://beginwithjava.com/java/loops/for-loop.html"><span>4.4 The for Loop</span></a></li>
+		<li><a href="../loops/nested-loop.html" tppabs="http://beginwithjava.com/java/loops/nested-loop.html" ><span>4.5 Nested Loops</span></a></li>
+		<li><a href="../loops/break-continue-statement.html" tppabs="http://beginwithjava.com/java/loops/break-continue-statement.html"><span>4.6 The break and continue Statements</span></a></li>
+		<li><a href="../loops/questions.html" tppabs="http://beginwithjava.com/java/loops/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Methods</span></a>
+      <ul class="hd">
+         <li><a href="../methods/introduction-to-methods.html" tppabs="http://beginwithjava.com/java/methods/introduction-to-methods.html"><span>5.1 Introduction to Methods</span></a></li>
+		<li><a href="../methods/void-methods.html" tppabs="http://beginwithjava.com/java/methods/void-methods.html"><span>5.2 void Methods</span></a></li>
+		<li><a href="../methods/passing-arguments-to-a-method.html" tppabs="http://beginwithjava.com/java/methods/passing-arguments-to-a-method.html"><span>5.3 Passing Arguments to a Method</span></a></li>
+		<li><a href="../methods/local-variables.html" tppabs="http://beginwithjava.com/java/methods/local-variables.html"><span>5.4 Local Variables</span></a></li>
+		<li><a href="../methods/returning-value-from-a-method.html" tppabs="http://beginwithjava.com/java/methods/returning-value-from-a-method.html"><span>5.5 Returning a Value from a Method</span></a></li>
+		<li><a href="../methods/questions.html" tppabs="http://beginwithjava.com/java/methods/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Introducing Classes</span></a>
+      <ul class="hd">
+         <li><a href="../classes-i/objects-classes.html" tppabs="http://beginwithjava.com/java/classes-i/objects-classes.html"><span>6.1 Objects and Classes</span></a></li>
+		<li><a href="../classes-i/simple-class.html" tppabs="http://beginwithjava.com/java/classes-i/simple-class.html"><span>6.2 Designing a Class</span></a></li>
+		<li><a href="../classes-i/constructors.html" tppabs="http://beginwithjava.com/java/classes-i/constructors.html"><span>6.3 Constructors</span></a></li>
+		<li><a href="../classes-i/overloading-methods.html" tppabs="http://beginwithjava.com/java/classes-i/overloading-methods.html"><span>6.4 Overloading Methods</span></a></li>
+		<li><a href="../classes-i/uml-diagram.html" tppabs="http://beginwithjava.com/java/classes-i/uml-diagram.html"><span>6.5 UML Diagram</span></a></li>
+		<li><a href="../classes-i/questions.html" tppabs="http://beginwithjava.com/java/classes-i/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Arrays and the ArrayList Class</span></a>
+      <ul class="hd">
+         <li><a href="../arrays-arraylist/introduction-to-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/introduction-to-arrays.html"><span>7.1 Introduction to Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/processing-array-elements.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/processing-array-elements.html"><span>7.2 Processing Array Elements</span></a></li>
+		<li><a href="../arrays-arraylist/passing-arrays-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/passing-arrays-as-arguments-to-methods.html"><span>7.3 Passing Arrays as Arguments to Methods</span></a></li>
+		<li><a href="../arrays-arraylist/common-array-operations.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/common-array-operations.html"><span>7.4 Common Array Operations</span></a></li>
+		<li><a href="../arrays-arraylist/returning-arrays-from-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/returning-arrays-from-methods.html"><span>7.5 Returning Arrays from Methods</span></a></li>
+		<li><a href="../arrays-arraylist/string-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/string-arrays.html"><span>7.6 String Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/arrays-of-objects.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/arrays-of-objects.html"><span>7.7 Arrays of Objects</span></a></li>
+		<li><a href="../arrays-arraylist/two-dimensional-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/two-dimensional-arrays.html"><span>7.8 Two-Dimensional Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/variable-length-argument-lists.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/variable-length-argument-lists.html"><span>7.9 Variable-Length Argument Lists</span></a></li>
+		<li><a href="../arrays-arraylist/the-array-list-class.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/the-array-list-class.html"><span>7.10 The ArrayList Class</span></a></li>
+		<li><a href="../arrays-arraylist/questions.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>A Closer Look at Classes and Methods</span></a>
+      <ul class="hd">
+         <li><a href="../classes-ii/static-class-members.html" tppabs="http://beginwithjava.com/java/classes-ii/static-class-members.html"><span>8.1 Static Class Members</span></a></li>
+		<li><a href="../classes-ii/passing-objects-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/passing-objects-as-arguments-to-methods.html"><span>8.2 Passing Objects as Arguments to Methods</span></a></li>
+		<li><a href="../classes-ii/returning-objects-from-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/returning-objects-from-methods.html"><span>8.3 Returning Objects from Methods</span></a></li>
+		<li><a href="../classes-ii/the-to-string-method.html" tppabs="http://beginwithjava.com/java/classes-ii/the-to-string-method.html"><span>8.4 The toString Method</span></a></li>
+		<li><a href="../classes-ii/the-this-reference-variable.html" tppabs="http://beginwithjava.com/java/classes-ii/the-this-reference-variable.html"><span>8.5 The this Reference Variable</span></a></li>
+		<li><a href="../classes-ii/aggregation.html" tppabs="http://beginwithjava.com/java/classes-ii/aggregation.html"><span>8.6 Aggregation</span></a></li>
+		<li><a href="../classes-ii/garbage-collection.html" tppabs="http://beginwithjava.com/java/classes-ii/garbage-collection.html"><span>8.7 Garbage Collection</span></a></li>
+		<li><a href="../classes-ii/questions.html" tppabs="http://beginwithjava.com/java/classes-ii/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Inheritance and Polymorphism</span></a>
+      <ul class="hd">
+         <li><a href="../inheritance/what-is-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/what-is-inheritance.html"><span>9.1 What Is Inheritance?</span></a></li>
+		<li><a href="../inheritance/calling-the-superclass-constructor.html" tppabs="http://beginwithjava.com/java/inheritance/calling-the-superclass-constructor.html"><span>9.2 Calling the Superclass Constructor</span></a></li>
+		<li><a href="../inheritance/overriding-superclass-methods.html" tppabs="http://beginwithjava.com/java/inheritance/overriding-superclass-methods.html"><span>9.3 Overriding Superclass Methods</span></a></li>
+		<li><a href="../inheritance/protected-member.html" tppabs="http://beginwithjava.com/java/inheritance/protected-member.html"><span>9.4 Protected Member</span></a></li>
+		<li><a href="../inheritance/multilevel-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/multilevel-inheritance.html"><span>9.5 Multilevel Inheritance</span></a></li>
+		<li><a href="../inheritance/object-class.html" tppabs="http://beginwithjava.com/java/inheritance/object-class.html"><span>9.6 The object Class</span></a></li>
+		<li><a href="../inheritance/polymorphism.html" tppabs="http://beginwithjava.com/java/inheritance/polymorphism.html"><span>9.7 Polymorphism</span></a></li>
+		<li><a href="../inheritance/abstract-classes-abstract-method.html" tppabs="http://beginwithjava.com/java/inheritance/abstract-classes-abstract-method.html"><span>9.8 Abstract Classes and Abstract Method</span></a></li>
+		<li><a href="../inheritance/interfaces.html" tppabs="http://beginwithjava.com/java/inheritance/interfaces.html"><span>9.9 Interfaces</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>File Input and Output</span></a>
+      <ul class="hd">
+         <li><a href="../file-input-output/introduction-file-input-output.html" tppabs="http://beginwithjava.com/java/file-input-output/introduction-file-input-output.html"><span>10.1 Introduction to File Input and Output</span></a></li>
+		 <li><a href="../file-input-output/writing-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/writing-text-file.html"><span>10.2 Writing Data to Text File</span></a></li>
+		<li><a href="../file-input-output/reading-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-text-file.html"><span>10.3 Reading Data from Text File</span></a></li>
+		<li><a href="../file-input-output/reading-writing-premitive-data-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-writing-premitive-data-text-file.html"><span>10.4 Reading and Writing Premitive Data</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>Exception Handling</span></a>
+      <ul class="hd">
+         <li><a href="../exception/handling-exception.html" tppabs="http://beginwithjava.com/java/exception/handling-exception.html"><span>11.1 Handling Exception</span></a></li>
+		 <li><a href="../exception/try-catch-multicatch.html" tppabs="http://beginwithjava.com/java/exception/try-catch-multicatch.html"><span>11.2 Try Catch Block and Multi Catch</span></a></li>
+		<li><a href="../exception/finally-block.html" tppabs="http://beginwithjava.com/java/exception/finally-block.html"><span>11.3 Finally Block</span></a></li>
+		<li><a href="../exception/try-with-resources.html" tppabs="http://beginwithjava.com/java/exception/try-with-resources.html"><span>11.4 Try with Resources</span></a></li>
+		<li><a href="../exception/checked-unchecked-exceptions.html" tppabs="http://beginwithjava.com/java/exception/checked-unchecked-exceptions.html"><span>11.5 Checked and Unchecked Exceptions</span></a></li>
+		<li><a href="../exception/rethrowing-throwing-an-exception.html" tppabs="http://beginwithjava.com/java/exception/rethrowing-throwing-an-exception.html"><span>11.6 Rethrowing and Throwing an Exception</span></a></li>
+		<li><a href="../exception/creating-your-own-exception-classes.html" tppabs="http://beginwithjava.com/java/exception/creating-your-own-exception-classes.html"><span>11.7 Creating Your Own Exception Classes</span></a></li>
+      </ul>
+   </li>   
+</ul>
+<div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+ 
+ <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+  
+</div>
+
+</div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

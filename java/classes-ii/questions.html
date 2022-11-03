@@ -1,0 +1,500 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head><meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="Class and objects programming questions and answers in Java." />
+   <meta name="Keywords" content="public, complex, method, class  " />
+   
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/java/classes-ii/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+  <title>Questions and Exercises - Classes and Objects| Java Fundamentals
+</title>
+  <style type="text/css">
+  .star {	font-size: large;
+}
+  </style>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<link rel="stylesheet" href="../../css/menustyle.css" tppabs="http://beginwithjava.com/css/menustyle.css">
+   <script src="../../js/jquery-1.8.0.min.js" tppabs="http://beginwithjava.com/js/jquery-1.8.0.min.js" type="text/javascript"></script>
+   <script src="../../js/script.js" tppabs="http://beginwithjava.com/js/script.js"></script>
+
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li class="active"><a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li><a href="../../servlet-jsp/index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+
+
+
+
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="garbage-collection.html" tppabs="http://beginwithjava.com/java/classes-ii/garbage-collection.html">Previous Section</a> | <a href="../inheritance/index.html" tppabs="http://beginwithjava.com/java/inheritance/index.html">Next Chapter </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">Programming Questions and Exercises : Class II</h3>
+<p><strong>Question 1</strong></p>
+<p>Consider the following  definition of the class MyClass:</p>
+<pre><code>public class MyClass
+{
+   private static int count = 0;
+   private int x;
+
+   public MyClass(int i)
+   {
+      x = i;
+   }
+   public void incrementCount()
+   {
+      count++;      
+   }
+
+   public void printX()
+   {
+      System.out.println("Value of x : "  + x);
+   }
+
+   public static void printCount()
+   {
+      System.out.println("Value of count : "  + count);
+   }
+}
+
+public class MyClassDemo
+{
+   public static void main(String[] args)
+   {
+        MyClass myObject1 = new MyClass(5);
+        MyClass myObject2 = new MyClass(7);        
+   }
+}</code></pre>
+<p>What is the output of the following Java code? (Assume that  following statements are written inside main)</p>
+<pre><code>myObject1.printX();
+myObject1.incrementCount();
+MyClass.incrementCount();
+myObject1.printCount();
+myObject2.printCount();
+myObject2.printX();
+myObject1.setX(14);
+myObject1.incrementCount();
+myObject1.printX();
+myObject1.printCount();
+myObject2.printCount();</code></pre>
+<p>&nbsp;</p>
+<p><strong>Question 2</strong> </p>
+<p>Write a Java class Clock for dealing with the day  time represented by hours, minutes, and seconds.
+Your  class must have the following features:</p>
+<ul>
+  <li>Three instance       variables for the hours (range 0 - 23), minutes (range 0 - 59), and       seconds (range 0 - 59).</li>
+  <li>Three       constructors:
+    <ul>
+      <li>default (with        no parameters passed; is should initialize the represented time to        12:0:0)</li>
+      <li>a constructor        with three parameters: hours, minutes, and seconds.</li>
+      <li>a constructor        with one parameter: the value of time in seconds since midnight (it        should be converted into the time value in hours, minutes, and seconds)</li>
+      </ul>
+  </li>
+  <li>Instance       methods:
+    <ul>
+      <li>a&nbsp;<em>set</em>-method method&nbsp;setClock()&nbsp;with one        parameter&nbsp;<em>seconds</em>&nbsp;since midnight (to be converted        into the time value in hours, minutes, and seconds as above).</li>
+      <li><em>get</em>-methods&nbsp;getHours(),&nbsp;getMinutes(),&nbsp;getSeconds()&nbsp;with no        parameters that return the corresponding values.</li>
+      <li><em>set</em>-methods&nbsp;setHours(),&nbsp;setMinutes(),&nbsp;setSeconds()&nbsp;with one        parameter each that set up the corresponding instance variables.</li>
+      <li>method&nbsp;tick()&nbsp;with no        parameters that increments the time stored in a Clock object by one        second.</li>
+      <li>method&nbsp;addClock()&nbsp;accepting an        object of type Clock as a parameter. The method should add the time        represented by the parameter class to the time represented in the current        class.</li>
+      <li>Add an instance        method&nbsp;toString()&nbsp;with no parameters to your class.&nbsp;toString()&nbsp;must return a String representation of        the Clock object in the form &quot;(hh:mm:ss)&quot;, for        example &quot;(03:02:34)&quot;.</li>
+      <li>Add an instance        method&nbsp;tickDown()&nbsp;which decrements the time stored in a        Clock object by one second.</li>
+      <li>Add an instance        method&nbsp;subtractClock()&nbsp;that takes one Clock parameter and        returns the difference between the time represented in the current Clock        object and the one represented by the Clock parameter. Difference of time        should be returned as an clock object. </li>
+      </ul>
+  </li>
+</ul>
+<p>Write  a separate class ClockDemo with a main() method. The  program should:</p>
+<ul type="disc">
+  <li>instantiate a       Clock object firstClock using one integer&nbsp;<em>seconds</em>&nbsp;since midnight obtained from the       keyboard.</li>
+  <li>tick the clock       ten times by applying its&nbsp;<em>tick()</em>&nbsp;method and print out the time       after each tick.</li>
+  <li>Extend your code       by appending to it instructions instantiating a Clock object &nbsp;secondClock by using three integers       (hours, minutes, seconds) read from the keyboard.</li>
+  <li>Then tick the       clock ten times, printing the time after each tick.</li>
+  <li>Add the       secondClock time in firstClock by calling method addClock.</li>
+  <li>Print both clock       objects calling toString method</li>
+</ul>
+Create  a reference thirdClock that should reference to object of difference of  firstClock and secondClock by calling the method subtractClock().
+<p>&nbsp;</p>
+<p><strong>Question 3</strong> </p>
+<p>Write a Java class&nbsp;Complex&nbsp;for dealing with complex  number. Your class must have the following features:
+</p>
+<ul type="disc">
+  <li>Instance       variables :</li>
+  <ul type="circle">
+    <li><strong>realPart</strong> for the real        part of type double</li>
+    <li><strong>imaginaryPart</strong> for imaginary        part of type double.</li>
+  </ul>
+  <li>Constructor:</li>
+  <ul type="circle">
+    <li><strong>public Complex ()</strong>: A default        constructor, it        should initialize the number to 0, 0)</li>
+    <li><strong>public Complex (double realPart,        double imaginaryPart)</strong>: A constructor with parameters, it        creates the complex object by setting the two fields to the passed        values.</li>
+  </ul>
+</ul>
+<ul type="disc">
+  <li>Instance       methods: </li>
+</ul>
+<ul>
+  <ul>
+    <li><strong>public Complex add (Complex otherNumber)</strong>: This  method will find the sum of the current complex number and the passed complex  number.&nbsp; The methods returns a new Complex number which is the sum of the  two. </li>
+    <li><strong>public Complex subtract (Complex  otherNumber)</strong>: This method will find the difference of the current complex  number and the passed complex number.&nbsp; The methods returns a new Complex  number which is the difference of the two.</li>
+    <li><strong>public Complex multiply (Complex  otherNumber)</strong>: This method will find the product of the current complex number  and the passed complex number.&nbsp; The methods returns a new Complex number  which is the product of the two.</li>
+    <li><strong>public Complex divide (Complex  otherNumber)</strong>: This method will find the ... of the current complex number and  the passed complex number.&nbsp; The methods returns a new Complex number which  is the ... of the two.</li>
+    <li><strong>public void setRealPart (double realPart)</strong>: Used  to set the real part of this complex number.</li>
+    <li><strong>public void setImaginaryPart (double realPart)</strong>: Used  to set the imaginary part of this complex number.</li>
+    <li><strong>public double getRealPart()</strong>: This  method returns the real part of the complex number</li>
+    <li><strong>public double getImaginaryPart()</strong>: This  method returns the imaginary part of the complex number</li>
+    <li><strong>public String toString()</strong>: This  method allows the complex number to be easily printed out to the screen</li>
+  </ul>
+</ul>
+Write  a separate class&nbsp;<strong>ComplexDemo</strong>&nbsp;with a&nbsp;main()&nbsp;method  and test the Complex class methods.
+<p>&nbsp;</p>
+<p><strong>Question 4</strong> </p>
+<p>Write a Java class&nbsp;Author&nbsp;with following features:</p>
+<ul type="disc">
+  <li>Instance       variables :</li>
+  <ul type="circle">
+    <li><strong>firstName</strong> for the author&rsquo;s        first name of type String.</li>
+    <li><strong>lastName</strong> for the author&rsquo;s        last name of type String.</li>
+  </ul>
+  <li>Constructor:</li>
+  <ul type="circle">
+    <li><strong>public Author (String        firstName, String lastName)</strong>: A constructor with parameters, it        creates the Author object by setting the two fields to the passed values.</li>
+  </ul>
+</ul>
+<ul type="disc">
+  <li>Instance       methods: </li>
+</ul>
+<ul>
+  <ul>
+    <li><strong>public void setFirstName (String firstName)</strong>: Used  to set the first name of author.</li>
+    <li><strong>public void setLastName (String lastName)</strong>: Used  to set the last name of author.</li>
+    <li><strong>public double getFirstName()</strong>: This  method returns the first name of the author.</li>
+    <li><strong>public double getLastName()</strong>: This  method returns the last name of the author.</li>
+    <li><strong>public String toString()</strong>: This  method printed out author&rsquo;s name to the screen</li>
+  </ul>
+</ul>
+<p>Write a Java class&nbsp;Book&nbsp;with following features:</p>
+<ul type="disc">
+  <li>Instance       variables :</li>
+  <ul type="circle">
+    <li><strong>title</strong> for the title        of book of type String.</li>
+    <li><strong>author</strong> for the author&rsquo;s        name of type String.</li>
+    <li><strong>price </strong>for the book        price of type double.</li>
+  </ul>
+  <li>Constructor:</li>
+  <ul type="circle">
+    <li><strong>public Book (String title, Author        name, double price)</strong>: A constructor with parameters, it        creates the Author object by setting the the fields to the passed values.</li>
+  </ul>
+</ul>
+<ul type="disc">
+  <li>Instance       methods: </li>
+</ul>
+<ul>
+  <ul>
+    <li><strong>public void setTitle(String title)</strong>: Used  to set the title of book.</li>
+    <li><strong>public void setAuthor(String author)</strong>: Used  to set the name of author of book.</li>
+    <li><strong>public void setPrice(double price)</strong>: Used  to set the price of book.</li>
+    <li><strong>public double getTitle()</strong>: This  method returns the title of book.</li>
+    <li><strong>public double getAuthor()</strong>: This  method returns the author&rsquo;s name of book.</li>
+    <li><strong>public String toString()</strong>: This  method printed out book&rsquo;s details to the screen</li>
+  </ul>
+</ul>
+<p>Write a separate class&nbsp;<strong>BookDemo</strong>&nbsp;with a&nbsp;main()&nbsp;method creates a  Book titled &ldquo;Developing Java Software&rdquo; with authors Russel Winderand price  79.75. Prints the Book&rsquo;s string representation to standard output (using System.out.println).</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+</div>
+        <div class="navigation">
+  <p><a href="garbage-collection.html" tppabs="http://beginwithjava.com/java/classes-ii/garbage-collection.html">Previous Section</a> | <a href="../inheritance/index.html" tppabs="http://beginwithjava.com/java/inheritance/index.html">Next Chapter </a>| <a href="../index.html" tppabs="http://beginwithjava.com/java/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div><div id='cssmenu'>
+<ul>
+   <li>Menu</li>
+   <li class='has-sub'><a href='#'><span>Java Fundamentals</span></a>
+      <ul class="hd">
+         <li><a href="../fundamentals/java-technology.html" tppabs="http://beginwithjava.com/java/fundamentals/java-technology.html"><span>1.1 Getting Started</span></a></li>
+		 <li><a href="../fundamentals/first-application.html" tppabs="http://beginwithjava.com/java/fundamentals/first-application.html"><span>1.2 Creating Your First Application</span></a></li>
+		 <li><a href="../fundamentals/part-of-program.html" tppabs="http://beginwithjava.com/java/fundamentals/part-of-program.html"><span>1.3 Parts of a Java Program</span></a></li>
+		<li><a href="../fundamentals/variables-and-literals.html" tppabs="http://beginwithjava.com/java/fundamentals/variables-and-literals.html"><span>1.4 Variables and Literals</span></a></li>
+		<li><a href="../fundamentals/primitive-data-type.html" tppabs="http://beginwithjava.com/java/fundamentals/primitive-data-type.html"><span>1.5 Primitive Data Types</span></a></li>
+		<li><a href="../fundamentals/arithmetic-operator.html" tppabs="http://beginwithjava.com/java/fundamentals/arithmetic-operator.html"><span>1.6 Arithmetic Operators</span></a></li>
+		<li><a href="../fundamentals/operator-precedence.html" tppabs="http://beginwithjava.com/java/fundamentals/operator-precedence.html"><span>1.7 Operator Precedence</span></a></li>
+		<li><a href="../fundamentals/type-conversion-and-casting.html" tppabs="http://beginwithjava.com/java/fundamentals/type-conversion-and-casting.html"><span>1.8 Type Conversion and Casting</span></a></li>
+		<li><a href="../fundamentals/questions.html" tppabs="http://beginwithjava.com/java/fundamentals/questions.html"><span>Questions and Exercises</span></a></li> 
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Objects and Input/Output</span></a>
+      <ul class="hd">
+         <li><a href="../inputoutput/class-string.html" tppabs="http://beginwithjava.com/java/inputoutput/class-string.html"><span>2.1 Class String</span></a></li>
+		 <li><a href="../inputoutput/reference-variable.html" tppabs="http://beginwithjava.com/java/inputoutput/reference-variable.html"><span>2.2 Objects and Reference Variables</span></a></li>
+		 <li><a href="../inputoutput/class-math.html" tppabs="http://beginwithjava.com/java/inputoutput/class-math.html"><span>2.3 Class Math Methods</span></a></li>
+		 <li><a href="../inputoutput/string-method.html" tppabs="http://beginwithjava.com/java/inputoutput/string-method.html"><span>2.4 String Methods</span></a></li>
+		 <li><a href="../inputoutput/reading-keyboard-input.html" tppabs="http://beginwithjava.com/java/inputoutput/reading-keyboard-input.html"><span>2.5 Reading Keyboard Input</span></a></li>
+		 <li><a href="../inputoutput/dialog-boxes.html" tppabs="http://beginwithjava.com/java/inputoutput/dialog-boxes.html"><span>2.6 Dialog Boxes for Input/Output</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Decision Structures</span></a>
+      <ul class="hd">
+         <li><a href="../decisions/if-else-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-statement.html"><span>3.1 The if-else Statement</span></a></li>
+		 <li><a href="../decisions/if-else-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/if-else-if-statement.html"><span>3.2 The if-else-if Statement</span></a></li>
+		 <li><a href="../decisions/nested-if-statement.html" tppabs="http://beginwithjava.com/java/decisions/nested-if-statement.html"><span>3.3 Nested if Statement</span></a></li>
+		 <li><a href="../decisions/logical-operators.html" tppabs="http://beginwithjava.com/java/decisions/logical-operators.html"><span>3.4 Logical Operators</span></a></li>
+		 <li><a href="../decisions/comparing-string-objects.html" tppabs="http://beginwithjava.com/java/decisions/comparing-string-objects.html"><span>3.5 Comparing String Objects</span></a></li>
+		 <li><a href="../decisions/switch-statement.html" tppabs="http://beginwithjava.com/java/decisions/switch-statement.html"><span>3.6 The switch Statement</span></a></li>
+		 <li><a href="../decisions/conditional-operator.html" tppabs="http://beginwithjava.com/java/decisions/conditional-operator.html"><span>3.7 Conditional Operator</span></a></li>
+		 <li><a href="../decisions/questions.html" tppabs="http://beginwithjava.com/java/decisions/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Loops</span></a>      <ul class="hd">
+         <li><a href="../loops/increment-decrement-operators.html" tppabs="http://beginwithjava.com/java/loops/increment-decrement-operators.html"><span>4.1 The Increment and Decrement Operators</span></a></li>
+		 <li><a href="../loops/while-loop.html" tppabs="http://beginwithjava.com/java/loops/while-loop.html"><span>4.2 The while Loop</span></a></li>
+		<li><a href="../loops/do-while-loop.html" tppabs="http://beginwithjava.com/java/loops/do-while-loop.html"><span>4.3 The do-while Loop</span></a></li>
+		<li><a href="../loops/for-loop.html" tppabs="http://beginwithjava.com/java/loops/for-loop.html"><span>4.4 The for Loop</span></a></li>
+		<li><a href="../loops/nested-loop.html" tppabs="http://beginwithjava.com/java/loops/nested-loop.html"><span>4.5 Nested Loops</span></a></li>
+		<li><a href="../loops/break-continue-statement.html" tppabs="http://beginwithjava.com/java/loops/break-continue-statement.html"><span>4.6 The break and continue Statements</span></a></li>
+		<li><a href="../loops/questions.html" tppabs="http://beginwithjava.com/java/loops/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Methods</span></a>
+      <ul class="hd">
+         <li><a href="../methods/introduction-to-methods.html" tppabs="http://beginwithjava.com/java/methods/introduction-to-methods.html"><span>5.1 Introduction to Methods</span></a></li>
+		<li><a href="../methods/void-methods.html" tppabs="http://beginwithjava.com/java/methods/void-methods.html"><span>5.2 void Methods</span></a></li>
+		<li><a href="../methods/passing-arguments-to-a-method.html" tppabs="http://beginwithjava.com/java/methods/passing-arguments-to-a-method.html"><span>5.3 Passing Arguments to a Method</span></a></li>
+		<li><a href="../methods/local-variables.html" tppabs="http://beginwithjava.com/java/methods/local-variables.html"><span>5.4 Local Variables</span></a></li>
+		<li><a href="../methods/returning-value-from-a-method.html" tppabs="http://beginwithjava.com/java/methods/returning-value-from-a-method.html"><span>5.5 Returning a Value from a Method</span></a></li>
+		<li><a href="../methods/questions.html" tppabs="http://beginwithjava.com/java/methods/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Introducing Classes</span></a>
+      <ul class="hd">
+         <li><a href="../classes-i/objects-classes.html" tppabs="http://beginwithjava.com/java/classes-i/objects-classes.html"><span>6.1 Objects and Classes</span></a></li>
+		<li><a href="../classes-i/simple-class.html" tppabs="http://beginwithjava.com/java/classes-i/simple-class.html"><span>6.2 Designing a Class</span></a></li>
+		<li><a href="../classes-i/constructors.html" tppabs="http://beginwithjava.com/java/classes-i/constructors.html"><span>6.3 Constructors</span></a></li>
+		<li><a href="../classes-i/overloading-methods.html" tppabs="http://beginwithjava.com/java/classes-i/overloading-methods.html"><span>6.4 Overloading Methods</span></a></li>
+		<li><a href="../classes-i/uml-diagram.html" tppabs="http://beginwithjava.com/java/classes-i/uml-diagram.html"><span>6.5 UML Diagram</span></a></li>
+		<li><a href="../classes-i/questions.html" tppabs="http://beginwithjava.com/java/classes-i/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Arrays and the ArrayList Class</span></a>
+      <ul class="hd">
+         <li><a href="../arrays-arraylist/introduction-to-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/introduction-to-arrays.html"><span>7.1 Introduction to Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/processing-array-elements.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/processing-array-elements.html"><span>7.2 Processing Array Elements</span></a></li>
+		<li><a href="../arrays-arraylist/passing-arrays-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/passing-arrays-as-arguments-to-methods.html"><span>7.3 Passing Arrays as Arguments to Methods</span></a></li>
+		<li><a href="../arrays-arraylist/common-array-operations.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/common-array-operations.html"><span>7.4 Common Array Operations</span></a></li>
+		<li><a href="../arrays-arraylist/returning-arrays-from-methods.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/returning-arrays-from-methods.html"><span>7.5 Returning Arrays from Methods</span></a></li>
+		<li><a href="../arrays-arraylist/string-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/string-arrays.html"><span>7.6 String Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/arrays-of-objects.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/arrays-of-objects.html"><span>7.7 Arrays of Objects</span></a></li>
+		<li><a href="../arrays-arraylist/two-dimensional-arrays.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/two-dimensional-arrays.html"><span>7.8 Two-Dimensional Arrays</span></a></li>
+		<li><a href="../arrays-arraylist/variable-length-argument-lists.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/variable-length-argument-lists.html"><span>7.9 Variable-Length Argument Lists</span></a></li>
+		<li><a href="../arrays-arraylist/the-array-list-class.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/the-array-list-class.html"><span>7.10 The ArrayList Class</span></a></li>
+		<li><a href="../arrays-arraylist/questions.html" tppabs="http://beginwithjava.com/java/arrays-arraylist/questions.html"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>A Closer Look at Classes and Methods</span></a>      <ul>
+         <li><a href="static-class-members.html" tppabs="http://beginwithjava.com/java/classes-ii/static-class-members.html"><span>8.1 Static Class Members</span></a></li>
+		<li><a href="passing-objects-as-arguments-to-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/passing-objects-as-arguments-to-methods.html"><span>8.2 Passing Objects as Arguments to Methods</span></a></li>
+		<li><a href="returning-objects-from-methods.html" tppabs="http://beginwithjava.com/java/classes-ii/returning-objects-from-methods.html"><span>8.3 Returning Objects from Methods</span></a></li>
+		<li><a href="the-to-string-method.html" tppabs="http://beginwithjava.com/java/classes-ii/the-to-string-method.html"><span>8.4 The toString Method</span></a></li>
+		<li><a href="the-this-reference-variable.html" tppabs="http://beginwithjava.com/java/classes-ii/the-this-reference-variable.html"><span>8.5 The this Reference Variable</span></a></li>
+		<li><a href="aggregation.html" tppabs="http://beginwithjava.com/java/classes-ii/aggregation.html"><span>8.6 Aggregation</span></a></li>
+		<li><a href="garbage-collection.html" tppabs="http://beginwithjava.com/java/classes-ii/garbage-collection.html"><span>8.7 Garbage Collection</span></a></li>
+		<li><a href="questions.html" tppabs="http://beginwithjava.com/java/classes-ii/questions.html" class="current"><span>Questions and Exercises</span></a></li>
+      </ul>
+   </li>
+   <li class='has-sub'><a href='#'><span>Inheritance and Polymorphism</span></a>
+      <ul class="hd">
+         <li><a href="../inheritance/what-is-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/what-is-inheritance.html"><span>9.1 What Is Inheritance?</span></a></li>
+		<li><a href="../inheritance/calling-the-superclass-constructor.html" tppabs="http://beginwithjava.com/java/inheritance/calling-the-superclass-constructor.html"><span>9.2 Calling the Superclass Constructor</span></a></li>
+		<li><a href="../inheritance/overriding-superclass-methods.html" tppabs="http://beginwithjava.com/java/inheritance/overriding-superclass-methods.html"><span>9.3 Overriding Superclass Methods</span></a></li>
+		<li><a href="../inheritance/protected-member.html" tppabs="http://beginwithjava.com/java/inheritance/protected-member.html"><span>9.4 Protected Member</span></a></li>
+		<li><a href="../inheritance/multilevel-inheritance.html" tppabs="http://beginwithjava.com/java/inheritance/multilevel-inheritance.html"><span>9.5 Multilevel Inheritance</span></a></li>
+		<li><a href="../inheritance/object-class.html" tppabs="http://beginwithjava.com/java/inheritance/object-class.html"><span>9.6 The object Class</span></a></li>
+		<li><a href="../inheritance/polymorphism.html" tppabs="http://beginwithjava.com/java/inheritance/polymorphism.html"><span>9.7 Polymorphism</span></a></li>
+		<li><a href="../inheritance/abstract-classes-abstract-method.html" tppabs="http://beginwithjava.com/java/inheritance/abstract-classes-abstract-method.html"><span>9.8 Abstract Classes and Abstract Method</span></a></li>
+		<li><a href="../inheritance/interfaces.html" tppabs="http://beginwithjava.com/java/inheritance/interfaces.html"><span>9.9 Interfaces</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>File Input and Output</span></a>
+      <ul class="hd">
+         <li><a href="../file-input-output/introduction-file-input-output.html" tppabs="http://beginwithjava.com/java/file-input-output/introduction-file-input-output.html"><span>10.1 Introduction to File Input and Output</span></a></li>
+		 <li><a href="../file-input-output/writing-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/writing-text-file.html"><span>10.2 Writing Data to Text File</span></a></li>
+		<li><a href="../file-input-output/reading-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-text-file.html"><span>10.3 Reading Data from Text File</span></a></li>
+		<li><a href="../file-input-output/reading-writing-premitive-data-text-file.html" tppabs="http://beginwithjava.com/java/file-input-output/reading-writing-premitive-data-text-file.html"><span>10.4 Reading and Writing Premitive Data</span></a></li>
+      </ul>
+   </li>
+   
+   <li class='has-sub'><a href='#'><span>Exception Handling</span></a>
+      <ul class="hd">
+         <li><a href="../exception/handling-exception.html" tppabs="http://beginwithjava.com/java/exception/handling-exception.html"><span>11.1 Handling Exception</span></a></li>
+		 <li><a href="../exception/try-catch-multicatch.html" tppabs="http://beginwithjava.com/java/exception/try-catch-multicatch.html"><span>11.2 Try Catch Block and Multi Catch</span></a></li>
+		<li><a href="../exception/finally-block.html" tppabs="http://beginwithjava.com/java/exception/finally-block.html"><span>11.3 Finally Block</span></a></li>
+		<li><a href="../exception/try-with-resources.html" tppabs="http://beginwithjava.com/java/exception/try-with-resources.html"><span>11.4 Try with Resources</span></a></li>
+		<li><a href="../exception/checked-unchecked-exceptions.html" tppabs="http://beginwithjava.com/java/exception/checked-unchecked-exceptions.html"><span>11.5 Checked and Unchecked Exceptions</span></a></li>
+		<li><a href="../exception/rethrowing-throwing-an-exception.html" tppabs="http://beginwithjava.com/java/exception/rethrowing-throwing-an-exception.html"><span>11.6 Rethrowing and Throwing an Exception</span></a></li>
+		<li><a href="../exception/creating-your-own-exception-classes.html" tppabs="http://beginwithjava.com/java/exception/creating-your-own-exception-classes.html"><span>11.7 Creating Your Own Exception Classes</span></a></li>
+      </ul>
+   </li>   
+</ul>
+<div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+ 
+ <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div>
+  
+</div>
+
+</div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>
