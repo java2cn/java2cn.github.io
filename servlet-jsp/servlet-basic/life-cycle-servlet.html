@@ -1,0 +1,219 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="A servlet is basically a small Java program that runs within a Web server. It can receive requests from clients and return responses. The whole life cycle of a servlet breaks up into 3 phases" />
+   <meta name="Keywords" content="servlet, doget, service, init" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/servlet-basic/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+<title>The Servlet Life Cycle</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="doget-and-dopost.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/doget-and-dopost.html">Previous Section</a> | <a href="javascript:if(confirm('http://beginwithjava.com/servlet-jsp/servlet-basic/primitive-data-type.html  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ·þÎñÆ÷±¨¸æ·¢Éú´íÎó, ×èÖ¹ÁËÏÂÔØ¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://beginwithjava.com/servlet-jsp/servlet-basic/primitive-data-type.html'" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/primitive-data-type.html"></a><a href="servletcontext.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/servletcontext.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">2.6 The Servlet Life Cycle</h3>
+          <p> From the previous examples, you learnt a servlet has methods like doGet(), doPost(), etc.  to deal with different kinds of HTTP requests. </p>
+          <p>To better understand the behavior of servlets, let&rsquo;s take a look at the life cycle of servlets.  A servlet is basically a small Java program that runs within a Web server. It can receive  requests from clients and return responses. The whole life cycle of a servlet breaks up into 3  phases:  </p>
+          <p><strong>Initialization:</strong> A servlet is first loaded and initialized usually when it is requested by the  corresponding clients.</p>
+          <p><strong>Service:</strong> After initialization, the servlets serve clients on request, implementing the application  logic of the web application they belong to. </p>
+          <p><strong>Destruction:</strong> When all pending requests are processed and the servlets have been idle  for a specific amount of time, they may be destroyed by the server and release all the  resources they occupy.  </p>
+          <p>More specifically, the behavior of a servlet is described in javax.servlet.Servlet interface,  in which the following methods are defined:</p>
+          <ul>
+            <li><strong>public void init(ServletConfig config) throws ServletException</strong> : This method is called once when the servlet is loaded into the servlet engine, before the  servlet is asked to process its first request.  The init method has a ServletConfig parameter. The servlet can read its initialization  arguments through the ServletConfig object. How the initialization arguments are set  is servlet engine dependent but they are usually defined in a configuration file. </li>
+            <li><strong>public void service(ServletRequest request, ServletResponse response) throws  ServletException, IOException</strong> : This method is called to process a request and service method invokes doGet, doPost, doPut, doDelete, etc. methods as appropriate. So you have nothing to do with service() method but you override either doGet() or doPost() depending on what type of request you receive from the client.<br />
+              <br />
+It can be called zero, one or many times until  the servlet is unloaded.  Once a servlet is loaded, it remains in the server&rsquo;s memory as a single object instance.  </li>
+            <li><strong>public void destroy() </strong>This method is called once just before the servlet is unloaded and taken out of service.</li>
+          </ul>
+          <p>To demonstrate the servlet life cycle, we&rsquo;ll begin with a simple example.<br />
+          Following example shows a servlet that counts and displays the number of times it has          been accessed.  When the server loads this servlet, the server creates a single instance to handle every request made of the servlet.</p>
+<pre><code>package com.beginwithjava.servlet;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+
+@WebServlet("/Counter")
+public class Counter extends HttpServlet
+{
+    int count;
+
+    public void init(ServletConfig config)
+            throws ServletException
+    {
+        super.init(config);
+        count = 0;
+    }
+
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        // increment the counter
+        ++count;
+        
+        // display the message
+        PrintWriter out = response.getWriter();
+        response.setContentType("text/html");
+        out.println("&lt;html&gt;&lt;head&gt;&lt;title&gt;Request Counter&lt;/title&gt;&lt;/head&gt;&lt;body&gt;");
+        out.println("&lt;p&gt;Since loading, this servlet has been accessed "
+                + count + " times.&lt;/p&gt;");
+        out.println("&lt;/body&gt;&lt;/html&gt;");
+    }
+}
+</code></pre>
+<p>Output :</p>
+<p><img src="../images/request-counter-1.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/request-counter-1.jpg" width="415" height="93" alt="request counter" /></p>
+<p>After click on refresh/reload button 2 more times.</p>
+<p><img src="../images/request-counter-2.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/request-counter-2.jpg" width="449" height="109" alt="request counter" /></p>
+
+        <p>&nbsp;</p>
+        </div>
+        <div class="navigation">
+  <p><a href="doget-and-dopost.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/doget-and-dopost.html">Previous Section</a> | <a href="servletcontext.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/servletcontext.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

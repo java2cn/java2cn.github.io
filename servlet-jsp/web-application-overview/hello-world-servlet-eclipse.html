@@ -1,0 +1,236 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="This tutorial guides you through the creation of a Java servlet. The instructions in this section show you how to write the servlet in Eclipse and deploy it to the Tomcat web server. " />
+   <meta name="Keywords" content="servlet,hello world, server, deploy" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/web-application-overview/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+<title>Creating Your First Servlet with Eclipse</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="installing-tomcat.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/installing-tomcat.html">Previous Section</a> | <a href="../servlet-basic/index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">1.6 Creating Servlet in Eclipse</h3>
+          
+          <p>This section guides you through the creation of a Java servlet. The instructions in this section show            you how to write the servlet in Eclipse and deploy it to the Tomcat web server. </p>
+          <p>The servlet that we create in this section simply generates a Web page that says Hello World! This simple exercise will help you understand the basic structure of servlets, how to develop them in Eclipse, and how to deploy them in Tomcat.<br />
+          </p>
+          <h3>Project Creation<br />
+          </h3>
+          <p>We will develop the servlet inside an Eclipse project called myproject. The following steps show how to create a new Eclipse project that can be used to develop servlets. </p>
+          <p><strong>1. </strong>Select File... New... Project.</p>
+          <p><img src="../images/servlet-1.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-1.jpg" width="455" height="476" alt="servlet new project" /></p>
+          <p><br />
+          <strong>2. </strong>Choose Dynamic Web Project  and click the Next button.</p>
+          <p><img src="../images/servlet-2.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-2.jpg" width="453" height="472" alt="create dynamic web project" /></p>
+          <p><br />
+          <strong>3.</strong> Set the Project name to myproject. Select Target runtime and version. Click the Finish button.</p>
+          <p><img src="../images/servlet-3.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-3.jpg" width="471" height="671" alt="project name" /></p>
+          <p>&nbsp;</p>
+          <p>A new project has been created with the standard structure of a Java web application.</p>
+          <p><img src="../images/project-explorer.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/project-explorer.jpg" width="333" height="331" alt="project explorer dynamic project" /></p>
+          <h3>Creating the Servlet<br />
+          </h3>
+          <p><strong>4. </strong>To create a servlet, rightclick on your project and select New &rarr; Servlet. Enter the following data and click next button.</p>
+          <p><img src="../images/servlet-4.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-4.jpg" width="464" height="406" alt="new servlet" /></p>
+          <p><strong>5. </strong>Note that the Class Name value provided in the first page of the wizard is automatically mapped to the Name field on this page. <br />
+          In the URL Mappings field, specify the URL pattern  to be mapped with the servlet. By default it is mapped the same name as class name. To edit the url mapping name, click the edit... button.</p>
+          <p><img src="../images/servlet-5.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-5.jpg" alt="url mapping" width="464" height="494" /><br />
+          </p>
+          <p><strong>6. </strong>Change HelloWorld with hello. Click OK button then Next button.</p>
+          <p><img src="../images/servlet-6.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-6.jpg" alt="edit url mapping" width="316" height="121" /></p>
+          <p><strong>7. </strong>Select the doGet option by checking the appropriate checkbox. Click Finish Button.</p>
+          <p><img src="../images/servlet-7.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-7.jpg" width="453" height="494" alt="doget in eclipse" /></p>
+          <p>The following code  will appear.. (comments are removed)</p>
+          <p><img src="../images/servlet-8.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-8.jpg" width="585" height="316" alt="hello world servelt" /></p>
+          <p>&nbsp;</p>
+          <p><strong>8. </strong>Paste the following code in the body of the doGet method.<br />
+          </p>
+          <pre>PrintWriter out = response.getWriter();
+out.println(&quot;Hello World!&quot;);</pre>
+          <p><img src="../images/servlet-10.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-10.jpg" width="519" height="266" alt="hello world servlet" /></p>
+          <p>&nbsp;</p>
+          <p><strong>9. </strong>When you enter this code, observe the red error line on the PrintWriter. You need to import  this class. Hover over the red line with the mouse and click on import 'PrintWriter' (java.io) as shown in the following screen shot.          </p>
+          <p><img src="../images/servlet-9.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-9.jpg" width="519" height="266" alt="importing package in eclipse" /></p>
+          <p>&nbsp;</p>
+          <p>Now our first servlet is created in eclipse enviornment. Here is the final code.</p>
+          <pre><code>package testPackage;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+@WebServlet("/hello")
+public class HelloWorld extends HttpServlet {
+	private static final long serialVersionUID = 1L;
+
+	protected void doGet(HttpServletRequest request,
+			HttpServletResponse response) 
+					throws ServletException, IOException {
+		
+		PrintWriter out = response.getWriter();
+		out.println("Hello World!");
+	}
+}</code></pre>
+          <h3>Deployment of the servlet</h3>
+          <p><strong>10. </strong>You application must be deployed to the server and started there. Select your servlet or your project,            right click            on it and select Run As &rarr; Run on Server from the context menu and select your existing          server.</p>
+          <p><img src="../images/servlet-11.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-11.jpg" width="510" height="549" alt="deploying the servlet" /></p>
+          <p>Ensure your servlet is selected to run on the server.</p>
+          <p><img src="../images/servlet-12.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-12.jpg" width="458" height="494" alt="servlet deployment" /></p>
+          <p><strong>11. </strong>Click on Finish. If the deployment was successful you should be able to access your servlet via the following URL: <strong>http://localhost:8080/myproject/hello</strong></p>
+          <p><img src="../images/servlet-13.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/servlet-13.jpg" width="400" height="95" alt="run servlet" /></p>
+          <p>&nbsp;</p>
+          <p>In the next chapter we'll learn about basics of servlet  in details..</p>
+        </div>
+        <div class="navigation">
+  <p><a href="installing-tomcat.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/installing-tomcat.html">Previous Section</a> | <a href="../servlet-basic/index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

@@ -1,0 +1,271 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="On submitting this form, form-data will be sent to a servlet whose url is mapped with it." />
+   <meta name="Keywords" content="doget, servlet, printwriter, form" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/servlet-basic/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+<title>Handling HTTP Get Request</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      
+        <!-- BEGIN header -->
+      
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="servlet-generate-html.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/servlet-generate-html.html">Previous Section</a> | <a href="reading-form-post.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/reading-form-post.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">2.3 Handling HTTP GET Requests</h3>
+          <p>HTML forms provide a user interface to collect data from the user and submit the data to a servlet or other server-side program for processing. For example look at the following form that shows a simple form with two text fields:</p>
+<p><img src="../images/addnumbers.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/addnumbers.jpg" width="344" height="158" alt="add two numbers" /></p>
+<p>HTML code for the above form is:</p>
+<pre><code>&lt;html&gt;
+&lt;head&gt;
+&lt;title&gt;Add Two numbers&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+	&lt;h3&gt;Add Two Numbers&lt;/h3&gt;
+	&lt;form action='add'&gt;
+		&lt;p&gt;Enter First Number: &lt;input type="text" name='first'&gt;&lt;/p&gt;
+		&lt;p&gt;Enter Second Number: &lt;input type="text" name='second'&gt;&lt;/p&gt;
+		&lt;p&gt;&lt;input type='submit' value='submit'&gt;&lt;/p&gt;
+	&lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+          <p>In above code observe the line &lt;form  action = 'add'&gt;. The action attribute  defines where the data gets sent. On submitting this form, form-data will be sent to a servlet  whose url is mapped with it.  Also note that one text field has a name of first and the other has a name of second. </p>
+          <p>Now, suppose that we enter 10 in the first textfield and 15 in the second textfield, and click the &quot;Submit&quot; button, we will get a &quot;404 page not found&quot; error (because we have yet to write the servlet). BUT observe the destination URL:</p>
+          <pre>http://localhost:8080/chapter2/add<strong>?first=10&amp;second=15</strong></pre>
+          <p>Observe that:</p>
+          <ul>
+            <li>The URL&nbsp;http://localhost:8080/chapter2/add&nbsp;is retrieved from the attribute&nbsp;action=&quot;add&quot;&nbsp;of the&nbsp;&lt;form&gt;&nbsp;start-tag.</li>
+            <li>A&nbsp;'?'&nbsp;follows the URL, which separates the URL and called&nbsp;<em>query string</em>.Notice the &quot;query string&quot;  ?first=10&amp;second=15. This part contains two parameters with parameter values:<br />
+              <br />
+              first=10<br />
+            second=15</li>
+          </ul>
+          <p>You can access these parameters from the&nbsp;HttpRequest&nbsp;object using getParameter method as shown in following code:</p>
+          <pre>String a = request.getParameter("first");
+String b = request.getParameter("second");</pre>
+          <p><strong>Writing a Servlet to Process Form Data</strong></p>
+          <p>When user submits an HTML form that does not specify method parameter for the form tag or explicitly specifies  the GET method, the doGet() method is invoked. To process  HTTP GET requests that are sent to the servlet, override the doGet( ) method.</p>
+          <p>Look at the following servlet code:</p>
+          <pre><code>package testPackage;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+@WebServlet("/add")
+public class AddNumber extends HttpServlet
+{
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        String a = request.getParameter("first");
+        String b = request.getParameter("second");
+
+        int sum = Integer.parseInt(a) + Integer.parseInt(b);
+
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("&lt;html&gt;&lt;head&gt;&lt;title&gt;Add&lt;/title&gt;&lt;/head&gt;&lt;body&gt;");
+
+        out.println("&lt;p&gt;The sum of " + a + " and " + b
+                + " is " + sum + ".&lt;/p&gt;");
+
+        out.println("&lt;/body&gt;&lt;/html&gt;");
+    }
+}</code></pre>
+          
+          <p>Now start the server and open HTML form in the browser, type data in textfields for example 50 and 14 and click on submit button. The form-data will be sent to the servelet and output will look like this:</p>
+          <p><img src="../images/form-data-doget.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/form-data-doget.jpg" width="428" height="68" alt="read form data" /></p>
+          <p><strong>Checking null or empty string</strong></p>
+          <p>It might be possible that user does not supply data in text fields and click on submit button or user enters an empty string &quot; &quot;. In this case, our servlet should open HTML form again. We can do this by the following code:</p>
+          <pre><code>if( a == null || a.trim().length() == 0 || b == null 
+      || b.trim().length() == 0 )
+{
+    response.sendRedirect( "addform.html" );
+    return;
+}</code></pre>
+          <p>The sendRedirect() method transfers control and open the URL specified. Now here is the complete program after adding validation codes:          </p>
+<pre><code>package testPackage;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+@WebServlet(&quot;/add&quot;)
+public class AddNumber extends HttpServlet
+{
+    protected void doGet(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        String a = request.getParameter(&quot;first&quot;);
+        String b = request.getParameter(&quot;second&quot;);
+        if( a == null || a.trim().length() == 0 || b == null 
+              || b.trim().length() == 0 )
+        {
+            response.sendRedirect( &quot;addform.html&quot; );
+            return;
+        }
+
+        int sum = Integer.parseInt(a) + Integer.parseInt(b);
+
+        response.setContentType(&quot;text/html&quot;);
+        PrintWriter out = response.getWriter();
+        out.println(&quot;&lt;html&gt;&lt;head&gt;&lt;title&gt;Add&lt;/title&gt;&lt;/head&gt;&lt;body&gt;&quot;);
+
+        out.println(&quot;&lt;p&gt;The sum of &quot; + a + &quot; and &quot; + b
+                + &quot; is &quot; + sum + &quot;.&lt;/p&gt;&quot;);
+
+        out.println(&quot;&lt;/body&gt;&lt;/html&gt;&quot;);
+    }
+}</code></pre>
+<p>&nbsp;</p>
+        </div>
+        <div class="navigation">
+  <p><a href="servlet-generate-html.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/servlet-generate-html.html">Previous Section</a> | <a href="reading-form-post.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/reading-form-post.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="If you need to send a password (or any sensitive piece of data), never use the&nbsp;GET&nbsp;method or you risk displaying it in the URL bar. IF you can send data using POST request by explicitly specifying method parameter for the form tag like this" />
+   <meta name="Keywords" content="servlet, post, dopost, query string" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/servlet-basic/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+<title>Handling HTTP Post Request</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="reading-form-get.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/reading-form-get.html">Previous Section</a> | <a href="doget-and-dopost.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/doget-and-dopost.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">2.4 Handling HTTP POST Requests</h3>
+          <p>In previous sections, we have seen servlets handle get request by overriding doGet method. The browser generates GET request :</p>
+          <ul>
+            <li>when the user enters a URL on the address line</li>
+            <li>follows a link from a webpage </li>
+            <li>submits an HTML form that does not specifie method parameter for the form tag or explicitly specifies  the GET method.</li>
+          </ul>
+          <p>You've also seen that the query string is sent in the URL of a GET request.</p>
+<p><strong>If you need to send a password (or any sensitive piece of data), never use the&nbsp;GET&nbsp;method or you risk displaying it in the URL bar.</strong></p>
+          <p>IF you can send data using POST request by explicitly specifying method parameter for the form tag like this :</p>
+          <pre><code>&lt;form method=&quot;POST&quot; action=&quot;&quot;&gt;</code></pre>
+          <ul>
+            <li>Query string will not be dispalyed on URL bar with a&nbsp;POST&nbsp;request. </li>
+            <li>If a form is sent using POST method, the data is appended to the body of the HTTP request. </li>
+            <li>If you need to send a large amount of data, the&nbsp;POST&nbsp;method is preferred because some browsers limit the sizes of URLs. In addition, many servers limit the length of URLs they accept.</li>
+          </ul>
+          <p>In the following example, we will create a html form that will sent data to servlet with POST request.</p>
+          <p><img src="../images/user-entry-form.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/user-entry-form.jpg" width="348" height="355" alt="user entry form" /></p>
+          <p>Html code of above form is:</p>
+          <pre><code>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;User Entry Form&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;form method="post" action="entry"&gt;
+        &lt;h3&gt;User Entry Form&lt;/h3&gt;
+        &lt;p&gt;
+            Username: &lt;input type="text" name="username"&gt; &lt;br&gt;&lt;br&gt;
+            Password: &lt;input type="password" name="user-password"&gt; &lt;br&gt;&lt;br&gt;
+			
+            Gender: &lt;input type="radio" name="sex" value="male"&gt;Male 
+            &lt;input type="radio" name="sex" value="female"&gt; Female &lt;br&gt;&lt;br&gt;
+				
+            Hobbies: 
+            &lt;input type="checkbox" name="soccer"&gt; Soccer
+            &lt;input type="checkbox" name="cricket"&gt; Cricket
+            &lt;input type="checkbox" name="baseball"&gt; Baseball&lt;br&gt;&lt;br&gt;
+			
+            Address: &lt;textarea rows="3" cols="30"&gt;&lt;/textarea&gt;&lt;br&gt;&lt;br&gt;
+			
+            Select Your City: 
+            &lt;select name="city"&gt;
+                &lt;option value="sydney"&gt;Sydney&lt;/option&gt;
+                &lt;option value="melbourne"&gt;Melbourne&lt;/option&gt;
+                &lt;option value="cromwell"&gt;Cromwell&lt;/option&gt;
+            &lt;/select&gt;&lt;br&gt;&lt;br&gt;
+			
+            &lt;input type="submit" value="Submit"&gt;
+            &lt;input type="reset" value="Reset"&gt;
+        &lt;/p&gt;
+    &lt;/form&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+<p>Form data is sent using METHOD=&quot;POST&quot; request. To handle post requst we override the doPost method in servlet.</p>
+          <pre><code>package com.beginwithjava.servlet;
+
+import java.io.*;
+import javax.servlet.*;
+import javax.servlet.annotation.*;
+import javax.servlet.http.*;
+
+@WebServlet("/entry")
+public class EntryForm extends HttpServlet
+{
+    protected void doPost(HttpServletRequest request,
+            HttpServletResponse response)
+            throws ServletException, IOException
+    {
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        out.println("&lt;html&gt;&lt;head&gt;&lt;title&gt;Add&lt;/title&gt;&lt;/head&gt;&lt;body&gt;");
+
+        out.println("&lt;p&gt;Username: "
+                + request.getParameter("username") + "&lt;/p&gt;");
+        out.println("&lt;p&gt;Password: "
+                + request.getParameter("user-password")
+                + "&lt;/p&gt;");
+        out.println("&lt;p&gt;Gender: "
+                + request.getParameter("sex") + "&lt;/p&gt;");
+        out.println("&lt;p&gt;Hobbies:&lt;/p&gt;");
+        String[] sports = request
+                .getParameterValues("sports");
+        out.println("&lt;ul&gt;");
+        for (String sport : sports)
+        {
+            out.println("&lt;li&gt;" + sport + "&lt;/li&gt;");
+        }
+        out.println("&lt;/ul&gt;");
+
+        out.println("&lt;p&gt;Address: "
+                + request.getParameter("address") + "&lt;/p&gt;");
+        out.println("&lt;p&gt;City: "
+                + request.getParameter("city") + "&lt;/p&gt;");
+        out.println("&lt;/body&gt;&lt;/html&gt;");
+    }
+}</code></pre>
+          <p>Notice that  no query string is displayed on address bar.</p>
+          <p><img src="../images/do-post-output.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/do-post-output.jpg" width="316" height="296" alt="dopost output" /></p>
+        </div>
+        <div class="navigation">
+  <p><a href="reading-form-get.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/reading-form-get.html">Previous Section</a> | <a href="doget-and-dopost.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/doget-and-dopost.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/servlet-basic/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

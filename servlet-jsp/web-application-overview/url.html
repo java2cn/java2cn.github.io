@@ -1,0 +1,196 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    
+   <meta name="Description" content=" HTML use markup tags to describe web pages. You can use notepad to type HTML code. You have undoubtedly used URLs to access HTML pages from the Web. " />
+   <meta name="Keywords" content="" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+  
+  
+  <title>
+    Parts of a Java Program
+  </title>
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/web-application-overview/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+</head>
+  
+  <body>
+    
+    <!-- BEGIN wrapper -->
+    <div id="wrapper">
+      <!-- BEGIN header -->
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="web-application.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/web-application.html">Previous Section</a> | <a href="html-tutorial.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/html-tutorial.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">1.2 URL (Uniform Resource Locator)</h3>
+          
+          <p>You have undoubtedly  used URLs to access HTML pages from the Web. An http URL may be broken down as shown below:</p>
+          <pre>http://beginwithjava.com:80/servlet-jsp/introduction/url.html
+|---| |----------------||--||--------------------------------|
+  1        2            3          4</pre>
+          <p><br>
+          The first part, http, is the protocol name. It is followed by a colon (:) and two slash characters (//).</p>
+          <p>The second part is the hostname of the computer on which the document resides.</p>
+<p>The third part, which is optional, is the port number. Internet hosts have a certain number of ports. HTTP usually runs on port 80, but this is not necessary. If it is running on port 80 in the machine you named in the hostname part, then you don't need to specify a port number. If it is running on a different port, a colon (:) followed by the port number is required to point to that port.</p>
+          <p>The fourth part is the path to the document you are requesting. The path is a set of characters separated by slashes (/).</p>
+          <h3>Create static web page using HTML</h3>
+          <p>With HTML, you can create your own web page. HTML is the core technology in which all pages are written. HTML use markup tags to describe web pages. You can use notepad to type HTML code. Here is an example code.</p>
+          <pre>&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;My Web page title &lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;My First Heading&lt;/h1&gt;
+    &lt;p&gt;My first paragraph&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</pre>
+          <p>Save this file use .html extension. When you open this file in a browser, it displays as web page. The browser does not display Html tag (Keywords surrounded by angle brackets) but use the tags to interpret the content of the page. </p>
+          <p>In previous code example,<br />
+            The text between &lt;html&gt; and &lt;/html&gt; describes the Web page.<br />
+            The text between &lt;body&gt; and &lt;/body&gt; is the visible page content.<br />
+            The text between &lt;h1&gt; and &lt;/h1&gt; is displayed as a heading.<br />
+            The text between &lt;p&gt; and &lt;/p&gt; is displayed as paragraph.</p>
+          <p>Output will look like this:</p>
+          <p></p>
+<p><img src="../images/webpage.jpg" tppabs="http://beginwithjava.com/servlet-jsp/images/webpage.jpg" width="496" height="326" alt="webpage" /></p>
+        </div>
+        <div class="navigation">
+  <p><a href="web-application.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/web-application.html">Previous Section</a> | <a href="html-tutorial.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/html-tutorial.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/web-application-overview/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+        
+      </div>
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+  
+ 
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>

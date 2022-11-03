@@ -1,0 +1,549 @@
+* {
+	margin: 0; padding: 0;
+}
+body {
+	text-align: center;
+	font:95% Verdana,Arial,Helvetica,sans-serif;
+	color: #000000;
+	background: #CCCCCC url("../images/sitebk.gif")/*tpa=http://beginwithjava.com/images/sitebk.gif*/;
+}
+a {
+	text-decoration: none;
+	color: #3081c8;
+}
+a:hover {
+	text-decoration: underline;
+}
+img {
+	border: 0;
+}
+
+.break {
+	font-size: 0;
+	width: 0; height: 0;
+	clear: both;
+}
+
+.gap
+{
+padding-bottom:15px;
+width:100%;
+text-align:center;
+
+}
+.alignleft {
+	float: left;
+	margin: 4px 10px 5px 0;
+}
+.alignright {
+	float: right;
+	margin: 4px 0 5px 10px;
+}
+.aligncenter {
+	text-align: center;
+}
+
+.alignlft {
+	text-align: left;
+}
+
+.alignrght {
+	text-align: right;
+}
+
+.hline
+{
+background: url("../images/horizontal.gif")/*tpa=http://beginwithjava.com/images/horizontal.gif*/ repeat-x bottom left;
+padding-bottom:15px;
+}
+
+.hidden {
+	display: none;
+}
+
+.toc {
+	margin-left: 50px;
+}
+.toc p{
+	padding-top:20px;}
+	
+	
+.toc ul li{ 
+	list-style:none;
+	margin-left:97px;
+}
+
+.post img {
+        max-width : 100%;
+    }
+
+
+
+/** BEGIN wrapper **/
+#wrapper {
+	max-width: 970px;
+	margin: 0 auto;
+	text-align: left;
+	background:#FFFFFF;	
+}
+/** END wrapper **/
+
+/** BEGIN header **/
+#header {
+	height: 172px;
+	overflow: hidden;
+	background:#FFFFD7 url("../images/tile.jpg")/*tpa=http://beginwithjava.com/images/tile.jpg*/;
+	}
+
+
+#header h1 a {
+	text-decoration:none;
+}
+
+
+#header h2#slogan { 
+	position: absolute;
+	margin: 0; padding: 0;
+	color: #6CF;
+	font: bold 14px Arial, Tahoma, Sans-Serif;	
+	text-transform: none;
+	/* change the values of top and Left to adjust the position of the slogan*/
+	top: 32px; 
+	left: 100px;
+}
+
+#header .fl_left{
+	position:relative;
+	clear:both;
+	float:left;
+	margin:20px 0 10px 20px;
+	height:40px;
+	width:100%;
+}
+
+
+#header .box {
+		float: left;
+		text-align:center;
+		width:100%;
+		height:90px;
+		padding: 0px 10px 0px 0px;
+		background:#ffffff;
+}
+	
+/** END header **/
+
+/** BEGIN navigation **/	
+
+#navigation { padding:5px 21px;  margin-bottom: 10px; }
+#navigation ul { list-style:none; list-style-position: outside; }
+#navigation ul li { padding: 0 10px; float: left; font-family: 'Raleway', sans-serif; font-size: 15px; font-weight: 500; }
+#navigation ul li:first-child { padding-left: 0; }
+#navigation ul li a { color: #4a4a4a; padding: 0 7px; display:block; height: 21px; line-height: 21px; border: 2px solid transparent; border-radius: 3px; -moz-border-radius: 3px; -webkit-border-radius: 3px; -o-border-radius: 3px; }
+#navigation ul li.active a,
+#navigation ul li a:hover { border: 2px solid #029cdb;  background: url("images/nav-btn.png")/*tpa=http://beginwithjava.com/css/images/nav-btn.png*/ repeat-x 0 0; color:#fff; text-decoration: none; }
+#navigation a.nav-btn { display:none; }
+
+
+/** BEGIN content **/
+
+#fullcontent {
+	float: left;
+	max-width:960px;
+	background: #FDFDFD;
+	margin-bottom: 16px;
+	padding: 15px 0 20px 10px;}
+
+
+#content {
+	max-width: 636px;
+	min-width:636px;
+	float: left;
+	padding: 15px 0 20px 10px;	
+}
+	#content .latest { }
+		#content .latest .post h2 {
+			font-size: 1.4em;
+			padding-bottom:15px;
+		}
+		#content .latest .post .details2 {
+			clear: both;
+			height: 20px;
+			padding-top: 10px;
+			border-top: 1px solid #AEAEAE;
+			font-family: Georgia;
+			color: #AEAEAE;
+		}
+		#content .latest .post .details2 a {
+			color: #AEAEAE;
+		}
+		#content .latest .post .details2 a:hover {
+			color: #464646;
+		}
+	#content .l { float: left; }
+	#content .r { float: right; }
+	#content .division {
+		max-width: 307px;
+	}
+		#content .division .post img {
+			float: left;
+			margin: 2px 10px 5px 0;
+			width: 100px;
+		}
+	#content .post {
+		background: #FDFDFD;
+		border: 1px solid #FC9;
+		margin-bottom: 16px;
+		padding: 10px;
+	}
+		#content .post h2 {
+			font-family: Verdana;
+			font-size: 1.4em;
+			margin-bottom: 5px;
+			color: #f09e2f;
+		}
+			#content .post h2 a {
+				color: #622613;
+			}
+			#content .post h2 a:hover {
+				color: #464646;
+			}
+		#content .post .details {
+			font-family: Georgia;
+			color: #AEAEAE;
+			margin-bottom: 15px;
+		}
+			#content .post .details a {
+				color: #AEAEAE;
+			}
+			#content .post .details a:hover {
+				color: #464646;
+			}
+		#content .post h3, h4, h5, h6 {
+			margin-bottom: 5px;
+			font-size: 1.2em;
+			font-family: Verdana;
+			font-weight: bold;
+			color:#f09e2f;
+		}
+		#content .post p {
+			line-height: 1.4em;
+			margin-bottom: 10px;
+		}
+		#content .post ol, #content .post ul {
+			margin-bottom: 10px;
+			margin-left:20px;
+		}
+		#content .post blockquote {
+			padding: 10px 10px 5px;
+			margin-bottom: 10px;
+			border-top: 1px solid #cdcdcd;
+			border-bottom: 1px solid #cdcdcd;
+			font-style: italic;
+		}
+		#content .post li {
+			line-height: 1.4em;
+			padding: 2px 0;
+		}
+/** END content **/
+
+/** BEGIN sidebar **/
+#sidebar {
+	width: 300px;
+	float: right;
+	margin: 40px 5px 0px 5px;
+	
+}
+	#sidebar .video {
+		padding: 10px;
+		background: url("../images/horizontal.gif")/*tpa=http://beginwithjava.com/images/horizontal.gif*/ repeat-x bottom left;
+		text-align: center;
+	}
+	#sidebar .tags {
+	        margin-top:1px;
+		padding-left: 30px;
+		padding-bottom:20px;
+	}
+	#sidebar h2 {
+		font-size: 0.9em;
+		font-weight: bold;
+		text-transform: uppercase;
+		color: #622613;
+		padding: 5px;
+	}
+	#sidebar ul {
+		list-style-type: none;
+		padding: 5px 10px 10px;
+		background: url("../images/horizontal.gif")/*tpa=http://beginwithjava.com/images/horizontal.gif*/ repeat-x bottom left;
+	}
+		#sidebar ul li {
+			padding: 4px 0;
+			line-height: 1.4em;
+		}
+		#sidebar ul li a {
+			color: #68645A;
+		}
+		#sidebar ul li a:hover, #sidebar ul li strong {
+			color: #464646;
+		}
+	#sidebar .l {
+		float: left;
+		width: 145px;
+		padding-top: 5px;
+	}
+	#sidebar .r {
+		float: right;
+		width: 145px;
+		padding-top: 5px;
+	}
+		#sidebar .l ul, #sidebar .r ul {
+			background: none;
+			padding-bottom: 20px;
+		}
+		#sidebar .l h2, #sidebar .r h2 {
+			padding: 5px 10px;
+		}
+/** END sidebar **/
+
+/** BEGIN footer **/
+#footer {
+	clear: both;
+	background:#f1f1f1;
+	text-align:right;
+	padding:10px;
+	color:#CCCCCC;
+	height: 40px;
+}
+	#footer p {
+		line-height: 2em;
+	}
+	#footer a {
+		text-decoration: none; 
+	    
+		color:#666;
+	}
+	
+	#footer a:hover {
+		text-decoration: underline; 
+	}
+/** END footer **/
+
+h2.title {
+	font-size: 0.9em;
+	text-transform: uppercase;
+	padding-bottom: 10px;
+}
+.postnav {
+	clear: both;
+	padding-top: 20px;
+	font-size: 0.8em;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+}
+	
+.rightalign
+{
+	float:right;
+}
+
+.float-left
+{
+float:left;
+}
+/** END wordpress 2.7 comments **/
+
+.post .meta {
+	height: 30px;
+	border-bottom: 1px solid #E9E3CB;
+	margin: 0px;
+	padding: 0px 0px 0px 0px;
+	text-align: left;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 13px;
+	font-weight: bold;
+}
+
+.post .meta .date {
+	float: left;
+	height: 24px;
+	padding: 3px 0px;
+	color: #464032;
+}
+
+.post .meta .posted {
+	float: right;
+	height: 24px;
+	padding: 5px 15px 0px 15px;
+	background: #F5F5F5;
+	color: #464032;
+}
+
+.post .meta a {
+	color: #464032;
+}
+
+.post p a {
+	font-family: Verdana, Geneva, sans-serif;
+
+
+}
+
+
+.post .meta .posted a{
+ text-decoration:underline;
+}
+
+.post .meta .posted a:hover{
+ text-decoration:none;
+}
+
+.post .entry {
+	padding: 0px 0px 20px 0px;
+	padding-bottom: 20px;
+	text-align: justify;
+}
+
+.post .entryad {
+	padding: 0px 0px 20px 10px;
+	padding-bottom: 20px;
+	float:right;
+}
+
+.links {
+	padding-top: 20px;
+	font-weight: bold;
+}
+
+.links a{
+	color:#FF8080;
+}
+
+#division .advt {
+margin:auto auto;
+	margin: 0px;
+	padding-bottom:0px;
+	background: #ECEAE1 url("../images/horizontal.gif")/*tpa=http://beginwithjava.com/images/horizontal.gif*/ repeat-x bottom left;
+}
+
+#wrapper .navigation {
+	position: relative;
+	clear:both;
+	
+	text-align:right;
+	padding: 0 8px 10px 30px;
+}
+
+#wrapper .chapternav {
+	position: relative;
+	clear:both;
+	padding: 0px 0 10px 20px;
+}
+.saffron {
+	color: #F09E2F;
+	font-weight: bold;
+}
+
+pre {
+	border:1px dashed #999999;
+	font-size: 110%;
+	background: #FEF4ED;
+	margin-bottom: 10px;
+	padding:10px;
+	line-height:20px;
+}
+.output {
+	font-family: Georgia, "Times New Roman", Times, serif;
+	background-color: #FEF7F1;
+	padding: 10px;
+}
+.inputdata {
+	color: #990000;
+}
+.imageborder {
+	border: 1px dashed #CCC;
+}
+
+/* 320px to 420px */
+
+@media screen and (max-width:320px)  {
+
+#header{
+clear:both;
+}
+#wrapper{
+max-width:420px;
+min-width:292px;
+}
+
+#content {
+	max-width: 420px;	
+	min-width:292px;
+}
+
+#sidebar
+{
+float:left;
+margin: 10px 5px 10px 5px;
+
+}
+
+    pre {
+	 white-space: pre-wrap;       /* css-3 */
+	 white-space: -moz-pre-wrap;  /* Mozilla, since 1999 */
+	 white-space: -pre-wrap;      /* Opera 4-6 */
+	 white-space: -o-pre-wrap;    /* Opera 7 */
+	 word-wrap: break-word;       /* Internet Explorer 5.5+ */
+	}	
+}
+
+
+/* below 600px */
+
+@media screen and (max-width: 600px) and (min-width: 321px) {
+
+
+#header{
+clear:both;
+}
+#wrapper{
+max-width:480px;
+min-width:480px;
+}
+
+#content {
+	max-width: 480px;	
+	min-width:480px;
+}
+
+#sidebar
+{
+float:left;
+margin: 10px 5px 10px 5px;
+}
+
+}
+
+
+/* 600px to 799px */
+
+@media screen and (max-width: 800px) and (min-width: 601px) {
+}
+
+/* 800px to 1024px */
+
+@media screen and (max-width: 1024px) and (min-width: 801px) {
+}
+
+
+@media screen and (max-width: 1220px) and (min-width: 1025px) {
+}
+
+/* iPhone [portrait + landscape] */
+@media screen and (max-device-width: 480px), screen and (-webkit-min-device-pixel-ratio: 2) {
+
+#cssmenu
+{
+display:none;
+}
+
+}

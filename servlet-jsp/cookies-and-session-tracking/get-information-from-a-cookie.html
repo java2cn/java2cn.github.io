@@ -1,0 +1,246 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js" tppabs="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
+    <link rel="shortcut icon" href="../favicon.gif" />
+    <meta name="Description" content="To retrieve any cookie, you must retrieve all the cookies using the getCookies method of the HttpServletRequest class." />
+   <meta name="Keywords" content="cookie,servlet,getCookies" />
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+   <meta name="Distribution" content="Global" />
+   <meta name="Author" content="drsingh008@gmail.com" />
+  
+  <link rel="stylesheet" href="../../css/style.css" tppabs="http://beginwithjava.com/css/style.css" type="text/css" />
+  
+
+  
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','../../../www.google-analytics.com/analytics.js'/*tpa=http://www.google-analytics.com/analytics.js*/,'ga');
+
+  ga('create', 'UA-43361458-1', 'http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/beginwithjava.com');
+  ga('send', 'pageview');
+
+</script>
+<title>Get information from a cookie</title>
+  <link href="../../src/styles/vs.css" tppabs="http://beginwithjava.com/src/styles/vs.css" rel="stylesheet" type="text/css">
+<script src="../../src/highlight.pack.js" tppabs="http://beginwithjava.com/src/highlight.pack.js"></script>
+<script>hljs.initHighlightingOnLoad();</script> 
+<script type="text/javascript"></script><script type="text/javascript"></script></head>
+  
+  <body>
+    
+    <p>
+      <!-- BEGIN wrapper -->
+    </p>
+    <div id="wrapper">
+      <p>
+        <!-- BEGIN header -->
+      </p>
+      <!-- navigation -->
+			<nav id="navigation">
+				<a href="#" class="nav-btn">MENU<span></span></a>
+				<ul>
+					<li><a href="../../index.html" tppabs="http://beginwithjava.com/index.html">home</a></li>
+					<li><a href="../../java/index.html" tppabs="http://beginwithjava.com/java/index.html">java programming</a></li>
+					<li  class="active"><a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">web programming</a></li>
+				</ul>
+				<div class="cl">&nbsp;</div>
+			</nav>
+		<!-- end of navigation -->
+
+<div id="header">            
+        
+        <!-- BEGIN logo -->
+        <div class="fl_left">
+          <h1><a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/" id="logo"><img src="../../images/logo.png" tppabs="http://beginwithjava.com/images/logo.png" width="250" height="36" alt="java logo" /></a></h1>
+          
+        </div>
+        <!-- end logo -->
+        
+        <!-- begin banner ad -->
+        <div class="box">
+        <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- 728x90 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:728px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6638602934"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+          
+        </div>
+        <!-- end banner ad -->
+  </div>
+  <!-- END header -->
+  
+  
+  
+  
+  
+  
+    <div id="content">
+  <div class="navigation">
+  <p><a href="cookie.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/cookie.html">Previous Section</a> | <a href="session-management.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/session-management.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+  </div>
+
+    <!-- BEGIN latest -->
+      <div class="latest">
+        <!-- begin post -->
+        <div class="post">
+          
+          <h3 class="hline">2.2 Get information from a cookie</h3>
+		  <p>In previous example, we have created a servlet that create and send cookie to the browser. Now, discuss in details:</p>
+		  <p>A&nbsp;Cookie&nbsp;is created by calling the&nbsp;Cookie&nbsp;constructor, which takes two strings: the cookie name and the cookie value.</p>
+		  <pre>Cookie cookie = new Cookie(&quot;user&quot;,&quot;uid1234&quot;);</pre>
+		  <p>The&nbsp;Cookie&nbsp;class provides a number of methods for setting a cookie's values and attributes. &nbsp;You can set the cookie expiration time via the&nbsp;setMaxAge(int expiry)&nbsp;method. This method sets the maximum age in seconds for this Cookie.</p>
+		  <p>A positive value indicates that the cookie will expire after that many seconds have passed. A negative value means that the cookie is not stored persistently and will be deleted when the Web browser exits. The following cookie expires after one hour.</p>
+		  <pre>cookie.setMaxAge(60*60);</pre>
+<p> The cookie is added to the&nbsp;Set-Cookie&nbsp;response header by means of the&nbsp;addCookie&nbsp;method of&nbsp;HttpServletResponse. Here's an example:</p>
+<pre>response.addCookie(cookie);</pre>
+<h4><br />
+	      To get information from a cookie<br />
+	      </h4>
+		  <p>To retrieve any cookie, you must retrieve all the cookies using the getCookies method of the&nbsp;HttpServletRequest&nbsp;class.</p>
+<p>The&nbsp;getCookies&nbsp;method returns an array of&nbsp;Cookie&nbsp;objects, which you can search to find the cookie that you want.</p>
+		  <pre><code>Cookie[] cookies = request.getCookies();
+if (cookies != null) 
+{
+  for (Cookie cookie : cookies)
+  {
+    String name = cookie.getName();
+    String value = cookie.getValue();
+  }
+}</code></pre>
+		  <p>Following program uses a "cookie" to identify new vs. repeat visitor to the site. If visitor is newcomer it will display, 'Welcome!!' otherwise display 'Welcome back!!'.</p>
+		  <pre><code>package com.beginwithjava.cookie;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.Cookie;
+import javax.servlet.http.HttpServlet;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+
+
+@WebServlet("/Greeting")
+public class GreetVisitor extends HttpServlet 
+{       
+    public void doGet(HttpServletRequest request, HttpServletResponse response)
+            throws ServletException, IOException 
+    {
+        // obtain a list of cookies
+        Cookie[] cookies = request.getCookies();
+        
+        boolean newVisit = true;
+        
+        //If the request contains cookies
+        if (cookies != null)
+        {
+          // Find the cookie of interest in arrays of cookies
+          for (Cookie cookie : cookies)
+          {
+             if (cookie.getName().equals("repeat") &&
+                  (cookie.getValue().equals("yes"))) 
+             {
+                  newVisit = false;
+                  break;
+             }
+          }
+        }
+        // for the first time visit
+        else
+        {
+            // create a cookie
+            Cookie cookie = new Cookie( "repeat", "yes");
+            //Setting the maximum age to 1 year
+            cookie.setMaxAge(60*60*24*365);
+            //Send the cookie to the browser
+            response.addCookie(cookie);
+        }
+        
+        response.setContentType("text/html");
+        PrintWriter out = response.getWriter();
+        
+        if(newVisit)
+            out.println("Welcome!!");
+        else
+            out.println("Welcome back!!");
+    }
+}</code></pre>
+		  <p>&nbsp;</p>
+        </div>
+
+</div>
+        <div class="navigation">
+  <p><a href="cookie.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/cookie.html">Previous Section</a> | <a href="session-management.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/session-management.html">Next Section </a>| <a href="index.html" tppabs="http://beginwithjava.com/servlet-jsp/cookies-and-session-tracking/index.html">Chapter Index </a>| <a href="../index.html" tppabs="http://beginwithjava.com/servlet-jsp/index.html">Main Index </a></p>
+		</div>
+      
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- responsive -->
+<ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="5611622215"
+     data-ad-format="auto"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+
+</div>
+  <!-- BEGIN sidebar -->
+  <div id="sidebar">
+
+    <div class="linksidebar">
+  <script async src="../../../pagead2.googlesyndication.com/pagead/js/adsbygoogle.js" tppabs="http://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+<!-- javalink200 -->
+<ins class="adsbygoogle"
+     style="display:inline-block;width:200px;height:90px"
+     data-ad-client="ca-pub-8001115649311088"
+     data-ad-slot="6370773414"></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>
+  </div></div>
+  <!-- end sidebar -->
+  
+  
+  
+  <!-- BEGIN footer -->
+  <div id="footer">
+    <p>
+      <a href="javascript:if(confirm('http://www.beginwithjava.com/  \n\n¸ÃÎÄ¼þÎÞ·¨ÓÃ Teleport Ultra ÏÂÔØ, ÒòÎª ËüÊÇÒ»¸öÓò»òÂ·¾¶Íâ²¿±»ÉèÖÃÎªËüµÄÆôÊ¼µØÖ·µÄµØÖ·¡£  \n\nÄãÏëÔÚ·þÎñÆ÷ÉÏ´ò¿ªËü?'))window.location='http://www.beginwithjava.com/'" tppabs="http://www.beginwithjava.com/">
+        Home
+      </a>
+      
+      |  	
+      <a href="../../contactus.html" tppabs="http://beginwithjava.com/contactus.html">
+        Contact us
+      </a>
+      |
+      <a href="../../aboutus.html" tppabs="http://beginwithjava.com/aboutus.html">
+        About us
+      </a>
+  </p>
+  </div>
+  <!-- END footer -->
+  
+  </div>
+  <!-- wrap ends here -->
+
+  <script>
+  (function (w,i,d,g,e,t,s) {w[d] = w[d]||[];t= i.createElement(g);
+    t.async=1;t.src=e;s=i.getElementsByTagName(g)[0];s.parentNode.insertBefore(t, s);
+  })(window, document, '_gscq','script','../../../widgets.getsitecontrol.com/26220/script.js'/*tpa=http://widgets.getsitecontrol.com/26220/script.js*/);
+</script>
+
+</body>
+  
+</html>
